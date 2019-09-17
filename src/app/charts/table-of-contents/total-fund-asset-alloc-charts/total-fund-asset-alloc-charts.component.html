@@ -1,0 +1,20 @@
+
+
+
+    <div>
+        <h3 style="float: left"><strong>Total Fund</strong></h3>
+        <h3 style="float:right"><strong>Asset Allocation Summary</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+    <button printSectionId="content" [useExistingCss]="true" ngxPrint>PRINT ALL</button>
+    <div id="content">
+
+        <app-totalfundcurrentchart></app-totalfundcurrentchart>
+        <br />
+        <br />
+        <app-totalfundtarget></app-totalfundtarget>
+
+    </div>

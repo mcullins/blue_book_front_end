@@ -1,0 +1,36 @@
+<div style="width:800px; height: 60em; margin: auto;">
+    <highcharts-chart [Highcharts]="Highcharts"
+                      [options]="chartOptions"
+                      style="width: 100%; height:80%; display: inline-block;"></highcharts-chart>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Fund</th>
+                <th colspan="3">Return Per Unit of Risk</th>
+                <th colspan="3">Volatility (StDev)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Beta</td>
+                <td>R<sup>2</sup></td>
+                <td>Fund</td>
+                <td>Universe</td>
+                <td>Index</td>
+                <td>Fund</td>
+                <td>Universe</td>
+                <td>Index</td>
+            </tr>
+            <tr>
+                <td>0.80</td>
+                <td>0.48</td>
+                <td>0.19</td>
+                <td>0.63</td>
+                <td>-0.09</td>
+                <td>11.23</td>
+                <td>15.63</td>
+                <td>9.77</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

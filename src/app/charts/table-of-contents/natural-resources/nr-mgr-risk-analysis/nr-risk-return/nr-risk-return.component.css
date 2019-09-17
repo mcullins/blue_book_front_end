@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+    height: 20%;
+    border: solid;
+    border-width: 1px;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    padding: 10px;
+    border: solid;
+    border-width: 1px;
+}
+
+td {
+    border: solid;
+    border-width: 1px;
+}

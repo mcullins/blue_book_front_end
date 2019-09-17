@@ -1,0 +1,9 @@
+.reltofund {
+    display: inline-block;
+    width: 49%;
+}
+
+#reltofundchart {
+    width: 100%;
+    display: block;
+}

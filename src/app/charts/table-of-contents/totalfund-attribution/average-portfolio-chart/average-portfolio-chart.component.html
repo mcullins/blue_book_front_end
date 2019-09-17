@@ -1,0 +1,32 @@
+<div style="height:30em; width: 49%; display: inline-block">
+    <table id="avgOfPortfolio" style="margin: auto; height: 30em; width: 80%">
+        <thead>
+            <tr style="border-bottom:solid">
+                <th width="60%">Manager</th>
+                <th >Average % of Portfolio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let mrcvsro of mrcvsros let index=index let odd=odd">
+    
+                    <tr *ngIf="index == 0 || index == 1 || index == 2
+                        || index == 3 || index == 4 || index == 6 
+                        || index == 7 || index == 8 || index == 12
+                        || index == 13 || index == 15 || index == 16"
+                        [ngClass]="{gray: index == 0 || index == 2 || 
+                         index == 4 || index == 7 || index == 12 || index == 15}">
+                        <td width="60%">
+                            {{mrcvsro.manager}}
+                        </td>
+
+                        <td [ngClass]="{'setParens':isNegative(mrcvsro.avgportfolio)}">
+                            {{mrcvsro.avgportfolio | number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+
+                    </tr>
+            
+            </ng-container>
+        </tbody>
+        
+    </table>
+</div>

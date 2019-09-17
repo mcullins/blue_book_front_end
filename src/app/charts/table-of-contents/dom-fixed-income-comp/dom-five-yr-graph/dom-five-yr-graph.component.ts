@@ -1,0 +1,293 @@
+import { Component, OnInit } from '@angular/core';
+import * as Highcharts from 'highcharts';
+
+@Component({
+  selector: 'app-dom-five-yr-graph',
+  templateUrl: './dom-five-yr-graph.component.html',
+  styleUrls: ['./dom-five-yr-graph.component.css']
+})
+export class DomFiveYrGraphComponent implements OnInit {
+    Highcharts = Highcharts;
+
+    chartOptions = {
+        chart: {
+            type: 'columnrange',
+            plotBorderColor: 'black',
+            plotBorderWidth: 2,
+            marginBottom: 190,
+            events: {
+                load: function () {
+                    var label = this.renderer.label("(High Yield Only) Benchmarks")
+                        .add();
+
+                    label.align(Highcharts.extend(label.getBBox(), {
+                        align: 'center',
+                        x: 0, // offset
+                        verticalAlign: 'bottom',
+                        y: -20 // offset
+                    }), null, 'spacingBox');
+
+                }
+            }
+        },
+
+        title: {
+            text: 'Five Years Annualized'
+        },
+
+        legend: {
+            enabled: true,
+            y: -90
+        },
+        credits: {
+            enabled: false
+        },
+        xAxis: [{
+            offset: 20,
+            lineWidth: 0,
+            tickLength: 0,
+            categories: ['Total Univ', 'Short', 'Gov/Cr Int', 'Gov/Cr', 'Aggregate', 'Core+', 'Core Ext', 'Long', 'TIPs', 'High Yield']
+        }, {
+            offset: 0,
+            linkedTo: 0,
+            lineWidth: 0,
+            title: {
+                text: ''
+            },
+            tickPositions: [4],
+            tickLength: 0,
+            gridLineColor: 'transparent',
+            "categories": {
+                "4": "-------------------- Intermediate --------------"
+
+            }
+        }],
+
+        yAxis: {
+            gridLineColor: 'transparent',
+            min: 0,
+            max: 10,
+            tickInterval: 1,
+            title: {
+                text: 'Return %'
+            }
+        },
+
+        series: [
+
+            {
+                data: [
+                    { x: 0, low: 1.4, high: 3 },
+                    { x: 0, low: 3, high: 4 },
+                    { x: 0, low: 4, high: 4.9 },
+                    { x: 0, low: 4.9, high: 8.7 }],
+                color: 'white',
+                showInLegend: false,
+                borderColor: '#303030',
+                borderWidth: 1,
+                grouping: false
+            },
+            {
+                data: [
+                    { x: 1, low: 1, high: 1.4 },
+                    { x: 1, low: 1.4, high: 1.7 },
+                    { x: 1, low: 1.7, high: 2 },
+                    { x: 1, low: 2, high: 2.9 }],
+                color: 'white',
+                showInLegend: false,
+                borderColor: '#303030',
+                borderWidth: 1,
+                grouping: false
+            }, {
+                data: [
+                    { x: 2, low: 3, high: 3.2 },
+                    { x: 2, low: 3.2, high: 3.4 },
+                    { x: 2, low: 3.4, high: 3.6 },
+                    { x: 2, low: 3.6, high: 4 }],
+                color: 'white',
+                showInLegend: false,
+                borderColor: '#303030',
+                borderWidth: 1,
+                grouping: false
+
+            },
+            {
+                data: [
+                    { x: 3, low: 3, high: 3.5 },
+                    { x: 3, low: 3.5, high: 4.4 },
+                    { x: 3, low: 4.4, high: 4.8 },
+                    { x: 3, low: 4.8, high: 5.6 }],
+                color: 'white',
+                showInLegend: false,
+                borderColor: '#303030',
+                borderWidth: 1,
+                grouping: false
+            },
+            {
+                data: [
+                    { x: 4, low: 3.5, high: 4 },
+                    { x: 4, low: 4, high: 4.3 },
+                    { x: 4, low: 4.3, high: 4.6 },
+                    { x: 4, low: 4.6, high: 5 }],
+                color: 'white',
+                showInLegend: false,
+                borderColor: '#303030',
+                borderWidth: 1,
+                grouping: false
+            }, {
+                data: [
+                    { x: 5, low: 3.9, high: 4.1 },
+                    { x: 5, low: 4.1, high: 4.6 },
+                    { x: 5, low: 4.6, high: 4.9 },
+                    { x: 5, low: 4.9, high: 5.8 }],
+                color: 'white',
+                showInLegend: false,
+                borderColor: '#303030',
+                borderWidth: 1,
+                grouping: false
+
+            },
+            {
+                data: [
+                    { x: 6, low: 4, high: 4.3 },
+                    { x: 6, low: 4.3, high: 4.5 },
+                    { x: 6, low: 4.5, high: 4.9 },
+                    { x: 6, low: 4.9, high: 5.5 }],
+                color: 'white',
+                showInLegend: false,
+                borderColor: '#303030',
+                borderWidth: 1,
+                grouping: false
+            }, {
+                data: [
+                    { x: 7, low: 7.5, high: 8.4 },
+                    { x: 7, low: 8.4, high: 8.7 },
+                    { x: 7, low: 8.7, high: 9 },
+                    { x: 7, low: 9, high: 9.4 }],
+                color: 'white',
+                showInLegend: false,
+                borderColor: '#303030',
+                borderWidth: 1,
+                grouping: false
+            }, {
+                data: [
+                    { x: 8, low: 2, high: 2.7 },
+                    { x: 8, low: 2.7, high: 3 },
+                    { x: 8, low: 3, high: 3.1 },
+                    { x: 8, low: 3.1, high: 3.3 }],
+                color: 'white',
+                showInLegend: false,
+                borderColor: '#303030',
+                borderWidth: 1,
+                grouping: false
+
+            },
+            {
+                data: [
+                    { x: 9, low: 3.8, high: 4.6 },
+                    { x: 9, low: 4.6, high: 5.2 },
+                    { x: 9, low: 5.2, high: 5.9 },
+                    { x: 9, low: 5.9, high: 6.5 }],
+                color: 'white',
+                showInLegend: false,
+                borderColor: '#303030',
+                borderWidth: 1,
+                grouping: false
+            },
+            {
+            name: 'DeMarche Bond Index',
+            type: 'scatter',
+            data: [
+                [.8, 0],
+                [0, 0],
+                [.2, 0],
+                [2, 0],
+                [3, 0],
+                [4, 0],
+                [6.5, 0]
+            ],
+            marker: {
+                fillColor: 'black',
+                lineWidth: 1,
+                lineColor: 'black'
+            },
+            color: '#000000',
+            tooltip: {
+                pointFormat: '{point.y}'
+            }
+        },
+        {
+            name: 'Appropriate Barclays and Merrill Lynch',
+            type: 'scatter',
+            data: [
+                [0, 3.8],
+                [1.2, 1.2],
+                [2.2, 3.1],
+                [3.2, 4.1],
+                [4.2, 3.8],
+                [5.2, 3.8],
+                [6.2, 3.8],
+                [7.2, 8.4],
+                [8.2, 3.1],
+                [9.2, 4.8]
+            ],
+            color: '#000000',
+            marker: {
+                fillColor: 'white',
+                lineWidth: 1,
+                lineColor: 'black'
+            },
+            tooltip: {
+                pointFormat: '{point.y}'
+            }
+        },
+        {
+            name: 'Loomis Sayles Co.',
+            color: '#000000',
+            type: 'scatter',
+            data: [
+                [-.2, 4.8],
+                [.8, 0],
+                [1.8, 0],
+                [2.2, 0],
+                [2.8, 0],
+                [3.2, 0],
+                [3.5, 0],
+                [3.8, 0],
+                [4.2, 0],
+                [4.8, 0],
+                [5, 0],
+                [5.2, 0],
+                [5.8, 4.7],
+                [6, 0],
+                [6.2, 0],
+                [6.8, 0],
+                [7, 0],
+                [7.2, 0],
+                [7.8, 0],
+                [8, 0],
+                [8.2, 0],
+                [8.8, 0],
+                [9, 0],
+                [9.2, 0]
+            ],
+            marker: {
+                fillColor: 'white',
+                lineWidth: 1,
+                lineColor: 'black'
+            },
+            tooltip: {
+                pointFormat: '{point.y}',
+            }
+        }
+        ],
+    }
+
+
+
+    constructor() { }
+
+    ngOnInit() {
+    }
+
+}

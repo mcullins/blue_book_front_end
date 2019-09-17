@@ -1,0 +1,90 @@
+<div id="content">
+    <div>
+        <h3 style="float: left"><strong>Manager Performance Review</strong></h3>
+        <h3 style="float:right"><strong>Risk Analysis</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+    <h6 style="text-align:center">Five-Year Statistics</h6>
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align:left">Portfolio</th>
+                <th style="text-align:left">Total Fund Relative Objective/ <br /> Manager Benchmark</th>
+                <th>Alpha<sup>1</sup></th>
+                <th>Beta</th>
+                <th>Correlation Coefficient</th>
+                <th>Information Ratio<sup>1</sup></th>
+                <th>Sharpe Ratio<sup>2</sup></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let riskAnalysis of riskAnalyses; let index=index">
+                <td width="20%" style="text-align:left; padding-left:10px"
+                    [ngClass]="{'isBlank':isBlankTop(index)}">
+                    {{riskAnalysis.portfolio}}
+                </td>
+                <td width="20%" style="text-align:left; padding-left:10px">
+                    {{riskAnalysis.benchmark}}
+                </td>
+                <td width="12%"
+                    [ngClass]="{'isRed':isNegative(riskAnalysis.alpha)}">
+                    {{riskAnalysis.alpha | twoDecimal:'riskAnalysis.alpha' | trimLeadZeroNeg:'riskAnalysis.alpha'}}
+                </td>
+                <td width="12%">
+                    {{riskAnalysis.beta | twoDecimal:'riskAnalysis.beta'}}
+                </td>
+                <td width="12%">
+                    {{riskAnalysis.corrCo | twoDecimal:'riskAnalysis.corrCo'}}
+                </td>
+                <td width="12%"
+                    [ngClass]="{'isRed':isNegative(riskAnalysis.infoRatio)}">
+                    {{riskAnalysis.infoRatio | twoDecimal:'riskAnalysis.infoRatio' | trimLeadZeroNeg:'riskAnalysis.infoRatio'}}
+                </td>
+                <td width="12%"
+                    [ngClass]="{'isShaded':isShadedTop(index)}">
+                    {{riskAnalysis.sharpeRatio}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <p>*22.8% SP 500, 5.7% R2000, 28.5% ACWI xUS, 15% BC Agg, 8% HFR Cns, 9% NCREIF ODCE, 5% SP MLP, 5% Bigelow Priv, 1% Big CF PE Na  - Objective has changed since inception</p>
+    <p><sup>1</sup>Negative Values are in red</p>
+    <p><sup>2</sup>Sharpe statistics below the benchmark are shaded</p>
+    <br />
+    <table>
+        <tbody>
+            <tr *ngFor="let riskAnalysisBottom of riskAnalysesBottom; let index=index">
+                <td width="20%" style="text-align:left; padding-left:10px"
+                    [ngClass]="{'isBlank':isBlankBottom(index)}">
+                    {{riskAnalysisBottom.portfolioBottom}}
+                </td>
+                <td width="20%" style="text-align:left; padding-left:10px">
+                    {{riskAnalysisBottom.benchmarkBottom}}
+                </td>
+                <td width="12%"
+                    [ngClass]="{'isRed':isNegative(riskAnalysisBottom.alphaBottom)}">
+                    {{riskAnalysisBottom.alphaBottom | twoDecimal:'riskAnalysisBottom.alphaBottom' | trimLeadZeroNeg:'riskAnalysisBottom.alphaBottom'}}
+                </td>
+                <td width="12%">
+                    {{riskAnalysisBottom.betaBottom | twoDecimal:'riskAnalysisBottom.betaBottom'}}
+                </td>
+                <td width="12%">
+                    {{riskAnalysisBottom.corrCoBottom | twoDecimal:'riskAnalysisBottom.corrCoBottom'}}
+                </td>
+                <td width="12%"
+                    [ngClass]="{'isRed':isNegative(riskAnalysisBottom.infoRatioBottom)}">
+                    {{riskAnalysisBottom.infoRatioBottom | twoDecimal:'riskAnalysisBottom.infoRatioBottom' | trimLeadZeroNeg:'riskAnalysisBottom.infoRatioBottom'}}
+                </td>
+                <td width="12%"
+                    [ngClass]="{'isShaded':isShadedBottom(index)}">
+                    {{riskAnalysisBottom.sharpeRatioBottom}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,125 @@
+<div id="content">
+    <div>
+        <h3 style="float: left"><strong>Annual Performance</strong></h3>
+        <h3 style="float:right"><strong>Tortoise Capital Advisors</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+    <div style="text-align: center;">
+        <highcharts-chart [Highcharts]="Highcharts"
+                          [options]="chartOptions"
+                          style="width: 800px; height: 50em; display: inline-block;"></highcharts-chart>
+    </div>
+    <table style="width: 800px; margin: auto;">
+        <thead>
+            <tr>
+                <th></th>
+                <th>1st Quartile</th>
+                <th>2nd Quartile</th>
+                <th>3rd Quartile</th>
+                <th>4th Quartile</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Versus Peer Group</td>
+                <td style="background-color: #02007c"></td>
+                <td style="background-color: lawngreen"></td>
+                <td style="background-color: #f4f442"></td>
+                <td style="background-color: white"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <table style="width: 75%; margin: auto;">
+        <thead>
+            <tr>
+                <th width="13%"></th>
+                <th>2007</th>
+                <th>2008</th>
+                <th>2009</th>
+                <th>2010</th>
+                <th>2011</th>
+                <th>2012</th>
+                <th>2013</th>
+                <th>2014</th>
+                <th>2015</th>
+                <th>YTD</th>
+            </tr>
+        </thead>
+        <tbody style="text-align:center;">
+            <tr style="background-color: darkgrey">
+                <td style="text-align:left;">&#9670; Total Fund</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>-6.4</td>
+            </tr>
+            <tr>
+                <td width="13%" style="text-align:left;">&#9632; Relative Benchmark<sup>2</sup></td>
+                <td>9.4</td>
+                <td>-37.5</td>
+                <td>78.8</td>
+                <td>35.2</td>
+                <td>14.5</td>
+                <td>5.0</td>
+                <td>29.7</td>
+                <td>7.7</td>
+                <td>-35.1</td>
+                <td>-6.3</td>
+            </tr>
+            <tr>
+                <td width="13%" style="text-align:left;">First Quartile</td>
+                <td>20.9</td>
+                <td>-37.7</td>
+                <td>88.6</td>
+                <td>39.0</td>
+                <td>17.9</td>
+                <td>12.5</td>
+                <td>39.0</td>
+                <td>19.2</td>
+                <td>-29.7</td>
+                <td>-2.3</td>
+            </tr>
+            <tr>
+                <td width="13%" style="text-align:left;">Median</td>
+                <td>17.8</td>
+                <td>-41.1</td>
+                <td>84.4</td>
+                <td>37.8</td>
+                <td>17.0</td>
+                <td>9.1</td>
+                <td>34.9</td>
+                <td>14.3</td>
+                <td>-32.4</td>
+                <td>-4.1</td>
+            </tr>
+            <tr>
+                <td width="13%" style="text-align:left;">Third Quartile</td>
+                <td>13.2</td>
+                <td>-45.5</td>
+                <td>81.1</td>
+                <td>35.4</td>
+                <td>13.3</td>
+                <td>7.0</td>
+                <td>29.5</td>
+                <td>11.5</td>
+                <td>-34.4</td>
+                <td>-5.9</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="width: 75%; margin: auto">
+        <br />
+        <p><sup>2</sup>SP MLP</p>
+    </div>
+</div>

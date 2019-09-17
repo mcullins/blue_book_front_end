@@ -1,0 +1,77 @@
+<div id="content">
+    <div>
+        <h3 style="float: left"><strong>Manager Performance Review</strong></h3>
+        <h3 style="float:right"><strong>Perfomance Results</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th rowspan="2">Inception Date</th>
+                <th>One Quarter</th>
+                <th>Year To Date</th>
+                <th>One Year</th>
+                <th>Three Years</th>
+                <th>Five Years</th>
+                <th>Ten Years</th>
+                <th>Since Inception</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>(%)</th>
+                <th>(%)</th>
+                <th>(%)</th>
+                <th>(%)</th>
+                <th>(%)</th>
+                <th>(%)</th>
+                <th>(%)</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let perfResult of perfResults; let index=index"
+                [ngClass]="{ 'leader': isLeader(index), 'bold': isBold(index)}">
+                <td style="text-align:left">
+                    {{spaces1(index)}}{{spaces2(index)}}{{spaces3(index)}}{{perfResult.type}}
+                </td>
+                <td>
+                    {{perfResult.inceptionDate}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(perfResult.quarter),
+                    'isRed':isNegative(perfResult.quarter)}">
+                    {{perfResult.quarter | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(perfResult.yearToDate),
+                    'isRed':isNegative(perfResult.yearToDate)}">
+                    {{perfResult.yearToDate | number:'1.1-1' | convertToSpaces: '-' }}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(perfResult.oneYr),
+                    'isRed':isNegative(perfResult.oneYr)}">
+                    {{perfResult.oneYr | number:'1.1-1' | convertToSpaces: '-' }}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(perfResult.threeYr),
+                    'isRed':isNegative(perfResult.threeYr)}">
+                    {{perfResult.threeYr | number:'1.1-1' | convertToSpaces: '-' }}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(perfResult.fiveYr),
+                    'isRed':isNegative(perfResult.fiveYr)}">
+                    {{perfResult.fiveYr | number:'1.1-1' | convertToSpaces: '-' }}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(perfResult.tenYr),
+                    'isRed':isNegative(perfResult.tenYr)}">
+                    {{perfResult.tenYr | number:'1.1-1' | convertToSpaces: '-' }}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(perfResult.sinceInception),
+                    'isRed':isNegative(perfResult.sinceInception)}">
+                    {{perfResult.sinceInception | number:'1.1-1' | convertToSpaces: '-' }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+</div>

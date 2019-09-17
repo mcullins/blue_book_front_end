@@ -1,0 +1,20 @@
+#abs-objective{
+    display: inline-block;
+    width: 49%
+}
+
+@media print {
+
+    .no-print {
+        display: none;
+    }
+    #date {
+        padding-right: 0;
+        font-size: 1em;
+    }
+
+    #abs-objective{
+        page-break-after: always;
+    }
+
+}

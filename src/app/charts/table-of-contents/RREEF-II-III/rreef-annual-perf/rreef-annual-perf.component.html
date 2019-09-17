@@ -1,0 +1,125 @@
+<div id="content">
+    <div>
+        <h3 style="float: left"><strong>Annual Performance</strong></h3>
+        <h3 style="float:right"><strong>RREEF II & III</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+    <div style="text-align: center;">
+        <highcharts-chart [Highcharts]="Highcharts"
+                          [options]="chartOptions"
+                          style="width: 800px; height: 50em; display: inline-block;"></highcharts-chart>
+    </div>
+    <table style="width: 800px; margin: auto;">
+        <thead>
+            <tr>
+                <th></th>
+                <th>1st Quartile</th>
+                <th>2nd Quartile</th>
+                <th>3rd Quartile</th>
+                <th>4th Quartile</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Versus Peer Group</td>
+                <td style="background-color: #02007c"></td>
+                <td style="background-color: lawngreen"></td>
+                <td style="background-color: #f4f442"></td>
+                <td style="background-color: white"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <table style="width: 75%; margin: auto;">
+        <thead>
+            <tr>
+                <th width="13%"></th>
+                <th>2007</th>
+                <th>2008</th>
+                <th>2009</th>
+                <th>2010</th>
+                <th>2011</th>
+                <th>2012</th>
+                <th>2013</th>
+                <th>2014</th>
+                <th>2015</th>
+                <th>YTD</th>
+            </tr>
+        </thead>
+        <tbody style="text-align:center;">
+            <tr style="background-color: darkgrey">
+                <td style="text-align:left;">&#9670; Total Fund</td>
+                <td>15.8</td>
+                <td>-19.8</td>
+                <td>-33.9</td>
+                <td>20.6</td>
+                <td>16.7</td>
+                <td>13.4</td>
+                <td>15.2</td>
+                <td>14.1</td>
+                <td>16.6</td>
+                <td>1.9</td>
+            </tr>
+            <tr>
+                <td width="13%" style="text-align:left;">&#9632; Relative Benchmark<sup>2</sup></td>
+                <td>15.8</td>
+                <td>-6.5</td>
+                <td>-16.9</td>
+                <td>13.1</td>
+                <td>14.3</td>
+                <td>10.5</td>
+                <td>11.0</td>
+                <td>11.8</td>
+                <td>13.3</td>
+                <td>2.2</td>
+            </tr>
+            <tr>
+                <td width="13%" style="text-align:left;">First Quartile</td>
+                <td>17.2</td>
+                <td>-7.7</td>
+                <td>-28.6</td>
+                <td>18.7</td>
+                <td>17.1</td>
+                <td>13.5</td>
+                <td>14.9</td>
+                <td>13.4</td>
+                <td>16.0</td>
+                <td>3.1</td>
+            </tr>
+            <tr>
+                <td width="13%" style="text-align:left;">Median</td>
+                <td>15.6</td>
+                <td>-9.6</td>
+                <td>-29.8</td>
+                <td>16.5</td>
+                <td>15.6</td>
+                <td>12.1</td>
+                <td>12.8</td>
+                <td>12.6</td>
+                <td>14.9</td>
+                <td>2.6</td>
+            </tr>
+            <tr>
+                <td width="13%" style="text-align:left;">Third Quartile</td>
+                <td>13.9</td>
+                <td>-15.5</td>
+                <td>-35.0</td>
+                <td>14.8</td>
+                <td>14.0</td>
+                <td>10.2</td>
+                <td>11.8</td>
+                <td>11.4</td>
+                <td>13.4</td>
+                <td>2.2</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="width: 75%; margin: auto">
+        <br />
+        <p><sup>2</sup>NCREIF</p>
+    </div>
+</div>

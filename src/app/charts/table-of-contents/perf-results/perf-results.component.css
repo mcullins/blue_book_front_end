@@ -1,0 +1,39 @@
+table {
+    padding: 10%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+
+.setParens::before {
+    content: '(';
+}
+
+.setParens::after {
+    content: ')';
+}
+
+.isRed {
+    color: red;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.leader {
+    background-color: darkgrey;
+    font-weight: bold;
+    border-top: solid;
+    border-bottom: solid;
+    border-width: 1px;
+}

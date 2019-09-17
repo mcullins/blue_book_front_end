@@ -1,0 +1,18 @@
+<div id="content">
+    <div>
+        <h3 style="float: left"><strong>Total Fund Performance Review</strong></h3>
+        <h3 style="float:right"><strong>Performance by Calendar Year</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+
+    <div style="text-align: center">
+        <highcharts-chart [Highcharts]="Highcharts"
+                          [options]="chartOptions"
+                          style="width: 70%; height: 50em; display: inline-block;"></highcharts-chart>
+    </div>
+    <br />
+    <p><sup>2</sup>22.8% SP 500, 5.7% R2000, 28.5% ACWI xUS, 15% BC Agg, 8% HFR Cns, 9% NCREIF ODCE, 5% SP MLP, 5% Bigelow Priv, 1% Big CF PE Na  - Objective has changed </p>
+</div>

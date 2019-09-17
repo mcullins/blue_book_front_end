@@ -1,0 +1,22 @@
+#data-table {
+    width: 100%;
+}
+
+th {
+    text-align: center;
+}
+tr {
+    text-align: center;
+}
+
+.setParens::before {
+    content: '(';
+}
+
+.setParens::after {
+    content: ')';
+}
+
+.makeBold {
+    font-weight: bold;
+}

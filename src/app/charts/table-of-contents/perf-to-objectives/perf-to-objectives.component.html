@@ -1,0 +1,31 @@
+<button class='no-print' printSectionId="content" [useExistingCss]="true" ngxPrint>PRINT ALL</button>
+<div id="content">
+    <div>
+        <h3 style="float: left"><strong>Total Fund Performance Review</strong></h3>
+        <h3 style="float:right"><strong>Performance to Objectives</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 id="date" style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+    <div id="wrap">
+        <button class='no-print' printSectionId="abs-objective" [useExistingCss]="true" ngxPrint>PRINT GRAPH</button>
+        <button class='no-print' printSectionId="rel-objective" [useExistingCss]="true" ngxPrint style="margin-left:43%">PRINT GRAPH</button>
+        <br />
+        <div id="abs-objective">
+            <app-abs-objective-graph></app-abs-objective-graph>
+        </div>
+            <app-rel-objective-graph id="rel-objective"></app-rel-objective-graph>
+
+            <br />
+            <br />
+            <button class='no-print' printSectionId="rel-to-totfunduniv" [useExistingCss]="true" ngxPrint>PRINT GRAPH</button>
+            <button class='no-print' printSectionId="five-yrs-ending" [useExistingCss]="true" ngxPrint style="margin-left:43%">PRINT GRAPH</button>
+            <br />
+
+            <app-rel-to-totfunduniv id="rel-to-totfunduniv"></app-rel-to-totfunduniv>
+            <app-five-yrs-ending id="five-yrs-ending"></app-five-yrs-ending>
+
+            <br />
+        </div>
+    </div>

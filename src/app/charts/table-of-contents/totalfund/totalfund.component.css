@@ -1,0 +1,52 @@
+#asset-table {
+    padding: 10%;
+    width: 100%;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+.setParens::before {
+    content: '(';
+}
+
+.setParens::after {
+    content: ')';
+}
+
+.isRed {
+    color: red;
+}
+
+.bold {
+    font-weight: bold;
+    border-top: solid;
+    border-bottom: solid;
+}
+
+.isGrey1 {
+    background-color: grey
+}
+
+@media print {
+    #asset-table {
+        padding: 0;
+        border-style: solid;
+        border-spacing: 0px;
+    }
+
+    th, td {
+        border-top: 1px solid !important;
+        border-collapse: collapse !important;
+    }
+
+    #date {
+        padding-right: 0;
+        font-size: 1em;
+    }
+}

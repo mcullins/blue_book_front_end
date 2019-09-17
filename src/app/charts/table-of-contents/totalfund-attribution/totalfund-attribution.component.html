@@ -1,0 +1,101 @@
+<div id="content">
+    <div>
+        <h3 style="float: left"><strong>Total Fund Performance Review</strong></h3>
+        <h3 style="float:right"><strong>Attribution</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+    <h4 style="text-align:center"><strong>Cumulative Return</strong></h4>
+    <br />
+    <table id="cumulative-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>1 Year %</th>
+                <th>3 Years %</th>
+                <th>5 Years %</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let cumulative of cumulatives; let index=index" [ngClass]="{ 'bold': isBoldCumulatives(index), 'border': isBorder(index)}">
+                <td style="text-align:left">
+                    {{cumulative.type}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(cumulative.oneYear), 'border2': isBorder2(index)}">
+                    {{cumulative.oneYear | number:'1.1-1' |convertToSpaces: '-'}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(cumulative.threeYears), 'border2': isBorder2(index)}">
+                    {{cumulative.threeYears | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(cumulative.fiveYears), 'border2': isBorder2(index)}">
+                    {{cumulative.fiveYears | number:'1.1-1' | convertToSpaces: '-' }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <div style="text-align:center">
+        <app-cumulative-return-graph></app-cumulative-return-graph>
+        <app-total-value-gainedlost-graph></app-total-value-gainedlost-graph>
+    </div>
+    <br />
+    <h2 style="font-weight: bold; border-bottom:solid">Manager Relative Contribution vs. Relative Objective</h2>
+    <table id="MRCvsRO-table">
+        <thead>
+            <tr style="border-bottom:solid">
+                <th style="text-align:left">Manager (Holdings Lg.-Sm)</th>
+                <th style="text-align:left">Relative Objective Component*</th>
+                <th>Average % of Portfolio</th>
+                <th>Actual Return %</th>
+                <th>Relative Objective Return %</th>
+                <th>Actual Return Difference %</th>
+                <th>Current Quarter Relative Contribution %</th>
+                <th>One Year Relative Contribution %</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let mrcvsro of mrcvsros; let index=index">
+                <td width="25%" style="text-align:left">
+                    {{mrcvsro.manager}}
+                </td>
+                <td width="15%" style="text-align:left">
+                    {{mrcvsro.relobjcomp}}
+                </td>
+                <td width="10%" [ngClass]="{'setParens':isNegative(mrcvsro.avgportfolio)}">
+                    {{mrcvsro.avgportfolio | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td width="10%" [ngClass]="{'setParens':isNegative(mrcvsro.actualreturn)}">
+                    {{mrcvsro.actualreturn | number:'1.1-1' | convertToSpaces: '-' }}
+                </td>
+                <td width="10%" [ngClass]="{'setParens':isNegative(mrcvsro.relobjreturn)}">
+                    {{mrcvsro.relobjreturn | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td width="10%" [ngClass]="{'setParens':isNegative(mrcvsro.actualretrundiff)}">
+                    {{mrcvsro.actualretrundiff | number:'1.1-1' | convertToSpaces: '-' }}
+                </td>
+                <td width="10%" [ngClass]="{'setParens':isNegative(mrcvsro.curqtrrelcont)}">
+                    {{mrcvsro.curqtrrelcont | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td width="10%" [ngClass]="{'setParens':isNegative(mrcvsro.yearrelcont)}">
+                    {{mrcvsro.yearrelcont | number:'1.1-1' | convertToSpaces: '-' }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <p>* Represents the appropriate benchmark in the Total Fund Relative Objective</p>
+    <p>  Numbers may not foot due to rounding</p>
+    <p><sup>2</sup> 22.8% SP 500, 5.7% R2000, 28.5% ACWI xUS, 15% BC Agg, 8% HFR Cns, 9% NCREIF ODCE, 5% SP MLP, 5% Bigelow Priv, 1% Big CF PE Na  - Objective has changed</p>
+    <br />
+    <app-five-largest-holdings-returns-graph></app-five-largest-holdings-returns-graph>
+    <app-average-portfolio-chart></app-average-portfolio-chart>
+    <app-five-highest-price-change-graph></app-five-highest-price-change-graph>
+    <app-five-lowest-price-change-graph></app-five-lowest-price-change-graph>
+</div>

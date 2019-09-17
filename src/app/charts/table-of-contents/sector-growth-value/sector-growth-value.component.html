@@ -1,0 +1,86 @@
+<div id="content">
+    <div>
+        <h3 style="float: left"><strong>Sector Weighting</strong></h3>
+        <h3 style="float:right"><strong>Denver Investment Advisors</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+    <h4 style="text-align:center"><strong>Growth/Value vs. DeMarche Small Cap Relative Value Index - Last Four Quarters</strong></h4>
+    <br />
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th colspan="2">6/30/2016</th>
+                <th colspan="2">9/30/2016</th>
+                <th colspan="2">12/31/2016</th>
+                <th colspan="2">3/31/2016</th>
+
+            </tr>
+            <tr>
+                <th></th>
+                <th colspan="2">(%)</th>
+                <th colspan="2">(%)</th>
+                <th colspan="2">(%)</th>
+                <th colspan="2">(%)</th>
+            </tr>
+            <tr style="border-top:solid; font-style: italic">
+                <th></th>
+                <th style="border-left:solid">Mgr</th>
+                <th>Index</th>
+                <th style="border-left:solid">Mgr</th>
+                <th>Index</th>
+                <th style="border-left:solid">Mgr</th>
+                <th>Index</th>
+                <th style="border-left:solid">Mgr</th>
+                <th>Index</th>
+            </tr>
+        </thead>
+
+        <tbody style="border-top:solid; border-bottom:solid">
+            <tr *ngFor="let sectorGrowthValue of sectorGrowthValues">
+                <td style="text-align:left; border-right:solid">
+                    {{sectorGrowthValue.type}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(sectorGrowthValue.june16mgr),
+                        'makeBold':isHigher(sectorGrowthValue.june16mgr, sectorGrowthValue.june16inx)}">
+                    {{sectorGrowthValue.june16mgr | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td style="border-right:solid"
+                    [ngClass]="{'setParens':isNegative(sectorGrowthValue.june16inx),
+                        'makeBold':isHigher(sectorGrowthValue.june16inx, sectorGrowthValue.june16mgr)}">
+                    {{sectorGrowthValue.june16inx | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(sectorGrowthValue.sept16mgr),
+                        'makeBold':isHigher(sectorGrowthValue.sept16mgr, sectorGrowthValue.sept16inx)}">
+                    {{sectorGrowthValue.sept16mgr | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td style="border-right:solid"
+                    [ngClass]="{'setParens':isNegative(sectorGrowthValue.sept16inx),
+                        'makeBold':isHigher(sectorGrowthValue.sept16inx, sectorGrowthValue.sept16mgr)}">
+                    {{sectorGrowthValue.sept16inx | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(sectorGrowthValue.dec16mgr),
+                        'makeBold':isHigher(sectorGrowthValue.dec16mgr, sectorGrowthValue.dec16inx )}">
+                    {{sectorGrowthValue.dec16mgr | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td style="border-right:solid"
+                    [ngClass]="{'setParens':isNegative(sectorGrowthValue.dec16inx),
+                        'makeBold':isHigher(sectorGrowthValue.dec16inx, sectorGrowthValue.dec16mgr)}">
+                    {{sectorGrowthValue.dec16inx | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(sectorGrowthValue.mar17mgr),
+                        'makeBold':isHigher(sectorGrowthValue.mar17mgr, sectorGrowthValue.mar17inx)}">
+                    {{sectorGrowthValue.mar17mgr | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(sectorGrowthValue.mar17inx),
+                        'makeBold':isHigher(sectorGrowthValue.mar17inx, sectorGrowthValue.mar17mgr)}">
+                    {{sectorGrowthValue.mar17inx | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align:center">For each pair of Manager and Index Weightings the higher value is in bold</p>
+</div>

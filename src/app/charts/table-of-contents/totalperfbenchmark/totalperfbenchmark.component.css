@@ -1,0 +1,74 @@
+#asset-table {
+    padding: 10%;
+    width: 100%;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+.setParens::before {
+    content: '(';
+}
+
+.setParens::after {
+    content: ')';
+}
+
+.isRed {
+    color: red;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#type {
+    text-align: left;
+}
+
+.netofees {
+    border-top: solid;
+    border-bottom: solid;
+    font-weight: bold;
+}
+
+
+@media print {
+    .no-print {
+        display: none;
+    }
+
+    #date {
+        padding-right: 0;
+        font-size: 1em;
+    }
+
+    .netofees td {
+        border-top: solid !important;
+        border-bottom: solid !important;
+        font-weight: bold;
+        border-color: black !important;
+    }
+
+    td {
+    }
+
+    #asset-table {
+        padding: 0;
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+
+    #benchmarks {
+        page-break-after: always;
+    }
+    #firsttable {
+        page-break-after:always;
+    }
+}

@@ -1,0 +1,40 @@
+#asset-table {
+    padding: 10%;
+    width: 100%;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+#grid {
+    border-style: solid;
+    border-width: 1px;
+    }
+.bold {
+    font-weight: bold;
+}
+
+.leader {
+    background-color: darkgrey;
+}
+
+@media print {
+    #asset-table {
+        padding: 0;
+        border-style: solid;
+        border-spacing: 0px;
+    }
+    th, td {
+        border-top: 1px solid !important;
+        border-collapse: collapse !important;
+    }
+#date{
+    padding-right: 0;
+    font-size: 1em;
+}
+}

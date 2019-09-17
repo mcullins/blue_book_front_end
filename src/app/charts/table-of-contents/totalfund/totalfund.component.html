@@ -1,0 +1,81 @@
+
+<button printSectionId="content" [useExistingCss]="true" ngxPrint>PRINT REPORT</button>
+<div id="content">
+    <div>
+        <h3 style="float: left"><strong>Total Fund</strong></h3>
+        <h3 style="float:right"><strong>Asset Allocation Summary</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 id="date" style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+    <div>
+        <table id="asset-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Previous Quarter</th>
+                    <th>Current Quarter</th>
+                    <th>Target</th>
+                    <th>Variance</th>
+                    <th>Min/Max</th>
+                    <th>Previous Quarter</th>
+                    <th>Current Quarter</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>(%)</th>
+                    <th>(%)</th>
+                    <th>(%)</th>
+                    <th>(%)</th>
+                    <th>(%)</th>
+                    <th style="font-style: italic">($ Millions)</th>
+                    <th style="font-style: italic">($ Millions)</th>
+                </tr>
+            </thead>
+            <tbody style="border-top:solid; border-bottom:solid">
+                <tr *ngFor="let totalFundData of totalFundDatas; let index=index" [ngClass]="{ 'bold': isBold(index)}">
+                    <td style="text-align:left">
+                        {{totalFundData.Type}}
+                    </td>
+                    <td>
+                        {{totalFundData.PrevQtr | number:'1.1-1'}}
+                    </td>
+                    <td [ngClass]="'isGrey1'">
+                        {{totalFundData.CurrentQtr | number:'1.1-1'}}
+                    </td>
+                    <td>
+                        {{totalFundData.Target | number:'1.1-1'}}
+                    </td>
+                    <td [ngClass]="{'setParens':isNegative(totalFundData.Variance),
+                        'isRed':isNegative(totalFundData.Variance)}">
+                        {{totalFundData.Variance | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td>
+                        {{totalFundData.Minmax}}
+                    </td>
+                    <td>
+                        {{totalFundData.PrevQtrMil | number:'1.1-1'}}
+                    </td>
+                    <td [ngClass]="'isGrey1'">
+                        {{totalFundData.CurrentQtrMil | number:'1.1-1'}}
+                    </td>
+                </tr>
+                <tr class="bold">
+                    <td style="text-align:left">Total Fund</td>
+                    <td>100.0%</td>
+                    <td style="background-color:grey">100.0%</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>$150.0</td>
+                    <td style="background-color:grey">$150.1</td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

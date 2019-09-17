@@ -1,0 +1,33 @@
+table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td{
+    text-align: center;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+#type {
+    text-align: left;
+    border-right: solid;
+    border-bottom: solid;
+    border-width: 1px;
+}
+
+.navy {
+    background-color: #0e0f2b;
+    color: white;
+}
+
+.red {
+    background-color: darkred;
+    color: white;
+}
+
+.grey {
+    background-color: darkgrey;
+}

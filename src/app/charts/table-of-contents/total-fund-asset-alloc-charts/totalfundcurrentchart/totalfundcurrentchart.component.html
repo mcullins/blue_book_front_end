@@ -1,0 +1,10 @@
+<button class="no-print" printSectionId="currentquarter" [useExistingCss]="true" ngxPrint>PRINT CURRENT QUARTER</button>
+<div class="page">
+    <div id="currentquarter">
+        <div style="text-align: center;">
+            <highcharts-chart [Highcharts]="Highcharts"
+                              [options]="chartOptions"
+                              style="width: 800px; height: 40em; display: inline-block;"></highcharts-chart>
+        </div>
+    </div>
+</div>

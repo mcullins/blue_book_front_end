@@ -1,0 +1,16 @@
+
+
+table {
+    border: solid;
+    border-spacing: 10px 10px;
+    height:35em; 
+    width: 80%;
+    margin: auto;
+}
+
+td {
+    text-align: center;
+    border: solid;
+}
+
+

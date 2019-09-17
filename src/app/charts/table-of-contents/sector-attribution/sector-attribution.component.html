@@ -1,0 +1,96 @@
+<div id="content">
+    <div>
+        <h3 style="float: left"><strong>Sector Attribution & Allocation</strong></h3>
+        <h3 style="float:right"><strong>Denver Investment Advisors</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+    <h4 style="text-align:center"><strong>Economic Orientation vs. DeMarche Small Cap Relative Value Index - Current Period</strong></h4>
+    <br />
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th colspan="2">Allocation</th>
+                <th colspan="2">Return</th>
+                <th colspan="2">Mgr Variation</th>
+                <th>Contribution</th>
+
+            </tr>
+            <tr>
+                <th style="text-align:left">GICS Classification</th>
+                <th colspan="2">(%)</th>
+                <th colspan="2">(%)</th>
+                <th colspan="2">(%)</th>
+                <th></th>
+            </tr>
+            <tr style="border-top:solid; font-style: italic">
+                <th></th>
+                <th style="border-left:solid">Mgr</th>
+                <th>Index</th>
+                <th style="border-left:solid">Mgr</th>
+                <th>Index</th>
+                <th style="border-left:solid">Weight</th>
+                <th>Return</th>
+                <th style="border-left:solid">Mgr</th>
+            </tr>
+        </thead>
+        <tbody style="border-top:solid; border-bottom:solid">
+            <tr *ngFor="let sectorAtt of sectorAtts">
+                <td style="text-align:left; border-right:solid">
+                    {{sectorAtt.gics}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(sectorAtt.allocMgr),
+                        'makeBold':isHigher(sectorAtt.allocMgr, sectorAtt.allocInx)}">
+                    {{sectorAtt.allocMgr | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td style="border-right:solid"
+                    [ngClass]="{'setParens':isNegative(sectorAtt.allocInx),
+                        'makeBold':isHigher(sectorAtt.allocInx, sectorAtt.allocMgr)}">
+                    {{sectorAtt.allocInx | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(sectorAtt.returnMgr),
+                        'makeBold':isHigher(sectorAtt.returnMgr, sectorAtt.returnInx)}">
+                    {{sectorAtt.returnMgr | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td style="border-right:solid"
+                    [ngClass]="{'setParens':isNegative(sectorAtt.returnInx),
+                        'makeBold':isHigher(sectorAtt.returnInx, sectorAtt.returnMgr)}">
+                    {{sectorAtt.returnInx | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(sectorAtt.mgrVarWeight),
+                        'makeBold':isHigher(sectorAtt.mgrVarWeight, sectorAtt.mgrVarReturn)}">
+                    {{sectorAtt.mgrVarWeight | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td style="border-right:solid"
+                    [ngClass]="{'setParens':isNegative(sectorAtt.mgrVarReturn),
+                        'makeBold':isHigher(sectorAtt.mgrVarReturn, sectorAtt.mgrVarWeight)}">
+                    {{sectorAtt.mgrVarReturn | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+                <td [ngClass]="{'setParens':isNegative(sectorAtt.contribution)}">
+                    {{sectorAtt.contribution | number:'1.1-1' | convertToSpaces: '-'}}
+                </td>
+            </tr>
+            <tr style="border-top:solid; font-weight: bold">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total =</td>
+                <td>1.5</td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+    <p style="text-align:center">For each pair of Manager and Index Weightings the higher value is in bold</p>
+    <br />
+    <app-eco-orientation-graph></app-eco-orientation-graph>
+
+</div>
+

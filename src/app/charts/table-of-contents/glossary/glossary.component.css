@@ -1,0 +1,24 @@
+#content {
+    width: 90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+p{
+    text-align:justify;
+}
+.grid-container{
+    display:grid;
+    grid-gap: 20px;
+}
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.item2 {
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+.item3 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}

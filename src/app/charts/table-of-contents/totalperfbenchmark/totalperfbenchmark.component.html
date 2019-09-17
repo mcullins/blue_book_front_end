@@ -1,0 +1,217 @@
+<button printSectionId="content" [useExistingCss]="true" ngxPrint>PRINT ALL</button>
+<div id="content">
+        <div>
+            <h3 style="float: left"><strong>Total Fund Performance Review</strong></h3>
+            <h3 style="float:right"><strong>Performance & Benchmarks</strong></h3>
+        </div>
+        <hr />
+        <br />
+        <h6 id="date" style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+        <br />
+        <button class='no-print' printSectionId="firsttable" [useExistingCss]="true" ngxPrint>PRINT TABLE</button>
+        <div id="firsttable">
+            <table id="asset-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>Since Inception</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>One Quarter</th>
+                        <th>Year to Date</th>
+                        <th>One Year</th>
+                        <th>Three Years</th>
+                        <th>Five Years</th>
+                        <th>Ten Years</th>
+                        <th>2Q 1988</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="netofees">
+                            <td style="text-align:left">Total Fund</td>
+                            <td>0.7%</td>
+                            <td>0.7%</td>
+                            <td style="color:red">(1.3)%</td>
+                            <td>6.9%</td>
+                            <td>7.1%</td>
+                            <td>4.8%</td>
+                            <td>.1%</td>
+                    </tr>
+                    <tr class="netofees">
+                        <td style="text-align:left">Net of Fees</td>
+                        <td>0.6%</td>
+                        <td>0.6%</td>
+                        <td style="color:red">(1.7)%</td>
+                        <td>6.5%</td>
+                        <td>6.8%</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr *ngFor="let objective of objectives; let index=index" [ngClass]="{ 'bold': isBoldObjectives(index)}">
+                        <td width="20%"
+                            style="text-align:left">
+                            {{objective.type}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(objective.quarter),
+                        'isRed':isNegative(objective.quarter)}">
+                            {{objective.quarter | number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(objective.yearToDate),
+                        'isRed':isNegative(objective.yearToDate)}">
+                            {{objective.yearToDate | number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(objective.oneYear),
+                        'isRed':isNegative(objective.oneYear)}">
+                            {{objective.oneYear | number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(objective.threeYears),
+                        'isRed':isNegative(objective.threeYears)}">
+                            {{objective.threeYears | number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(objective.fiveYears),
+                        'isRed':isNegative(objective.fiveYears)}">
+                            {{objective.fiveYears | number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                        <td>
+                            {{objective.tenYears | number:'1.1-1'}}
+                        </td>
+                        <td>
+                            {{objective.sinceInception  | number:'1.1-1'}}
+                        </td>
+                    </tr>
+
+
+                    <tr *ngFor="let perf of perfs; let index=index" [ngClass]="{ 'bold': isBoldPerfs(index)}">
+                        <td width="20%"
+                            style="text-align:left">
+                            {{perf.type}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(perf.quarter),
+                        'isRed':isNegative(perf.quarter)}">
+                            {{perf.quarter | number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(perf.yearToDate),
+                        'isRed':isNegative(perf.yearToDate)}">
+                            {{perf.yearToDate | number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(perf.oneYear),
+                        'isRed':isNegative(perf.oneYear)}">
+                            {{perf.oneYear| number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(perf.threeYears),
+                        'isRed':isNegative(perf.threeYears)}">
+                            {{perf.threeYears| number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(perf.fiveYears),
+                        'isRed':isNegative(perf.fiveYears)}">
+                            {{perf.fiveYears| number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(perf.tenYears),
+                        'isRed':isNegative(perf.tenYears)}">
+                            {{perf.tenYears| number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                        <td>
+                            {{perf.sinceInception | number:'1.1-1' | convertToSpaces: '-'}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <button class='no-print' printSectionId="benchmarks" [useExistingCss]="true" ngxPrint>PRINT TABLE</button>
+        <div id="benchmarks">
+            <table id="asset-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>Since Inception</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>One Quarter</th>
+                        <th>Year to Date</th>
+                        <th>One Year</th>
+                        <th>Three Years</th>
+                        <th>Five Years</th>
+                        <th>Ten Years</th>
+                        <th>2Q 1988</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                        <th>(%)</th>
+                    </tr>
+                </thead>
+                <tbody style="border-top:solid; border-bottom:solid">
+                    <tr *ngFor="let benchmark of benchmarks; let index=index" [ngClass]="{ 'bold': isBoldBenchmarks(index)}">
+                        <td id="type"
+                            width="20%">
+                            {{benchmark.type }}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(benchmark.quarter),
+                        'isRed':isNegative(benchmark.quarter)}">
+                            {{benchmark.quarter | number:'1.1-1'}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(benchmark.yearToDate),
+                        'isRed':isNegative(benchmark.yearToDate)}">
+                            {{benchmark.yearToDate | number:'1.1-1'}}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(benchmark.oneYear),
+                        'isRed':isNegative(benchmark.oneYear)}">
+                            {{benchmark.oneYear | number:'1.1-1'| convertToSpaces: '-' }}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(benchmark.threeYears),
+                        'isRed':isNegative(benchmark.threeYears)}">
+                            {{benchmark.threeYears | number:'1.1-1' }}
+                        </td>
+                        <td [ngClass]="{'setParens':isNegative(benchmark.fiveYears),
+                        'isRed':isNegative(benchmark.fiveYears)}">
+                            {{benchmark.fiveYears | number:'1.1-1' }}
+                        </td>
+                        <td>
+                            {{benchmark.tenYears | number:'1.1-1' }}
+                        </td>
+                        <td>
+                            {{benchmark.sinceInception | number:'1.1-1'  }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <button class='no-print' printSectionId="graph" [useExistingCss]="true" ngxPrint>PRINT GRAPH</button>
+        <div id="graph">
+            <app-five-year-return-graph></app-five-year-return-graph>
+            <br />
+            <p><sup>1</sup>GDP Deflator + 5%  </p>
+            <p><sup>2</sup>22.8% SP 500, 5.7% R2000, 28.5% ACWI xUS, 15% BC Agg, 8% HFR Cns, 9% NCREIF ODCE, 5% SP MLP, 5% Bigelow Priv, 1% Big CF PE Na  - Objective has changed since inception</p>
+        </div>
+    </div>

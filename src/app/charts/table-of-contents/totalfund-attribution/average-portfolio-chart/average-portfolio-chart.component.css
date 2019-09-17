@@ -1,0 +1,19 @@
+td {
+    text-align: center;
+    border-right: solid;
+}
+
+th {
+    text-align: center;
+    border-right: solid;
+    padding: 10px;
+}
+
+#avgOfPortfolio {
+    border: solid;
+    border-spacing: 10px 10px;
+}
+
+.gray {
+    background-color: #bab8b8;
+}

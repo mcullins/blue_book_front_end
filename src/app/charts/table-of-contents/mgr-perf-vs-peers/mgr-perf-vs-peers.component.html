@@ -1,0 +1,116 @@
+<div id="content">
+    <div>
+        <h3 style="float: left"><strong>Manager Performance Review</strong></h3>
+        <h3 style="float:right"><strong>Performance vs Peers and Relative Benchmarks</strong></h3>
+    </div>
+    <hr />
+    <br />
+    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <br />
+
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th style="text-align:center; border:solid; border-width:1px;">Quarter</th>
+                <th style="text-align:center; border:solid; border-width:1px;">1 Yr</th>
+                <th style="text-align:center; border:solid; border-width:1px;">3 Yr</th>
+                <th style="text-align:center; border:solid; border-width:1px;">5 Yr</th>
+            </tr>
+        </thead>
+        <tbody style="border-top:solid; border-bottom:solid; border-width:1px">
+            <tr *ngFor="let perfPeersTop of perfPeersTops let index=index">
+                <td width="60%" id="type">
+                    {{perfPeersTop.type}} <br />
+                    {{perfPeersTop.followType}}
+                </td>
+                <td width="10%"
+                    [ngClass]="{ 'navy': isNavyQtrTop(index),
+                    'red': isRedQtrTop(index),
+                    'grey': isGreyQtrTop(index)}">
+                    {{perfPeersTop.quarter}}
+                </td>
+                <td width="10%"
+                    [ngClass]="{ 'navy': isNavy1yrTop(index),
+                    'red': isRed1yrTop(index),
+                    'grey': isGrey1yrTop(index)}">
+                    {{perfPeersTop.oneYr}}
+                </td>
+                <td width="10%"
+                    [ngClass]="{ 'navy': isNavy3yrTop(index),
+                    'red': isRed3yrTop(index),
+                    'grey': isGrey3yrTop(index)}">
+                    {{perfPeersTop.threeYr}}
+                </td>
+                <td width="60%"
+                    [ngClass]="{ 'navy': isNavy5yrTop(index),
+                    'red': isRed5yrTop(index),
+                    'grey': isGrey5yrTop(index)}">
+                    {{perfPeersTop.fiveYr}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th style="text-align:center">1st Quartile</th>
+                <th style="text-align:center">2nd Quartile</th>
+                <th style="text-align:center">3rd Quartile</th>
+                <th style="text-align:center">4th Quartile</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td width="60%" style="border:none; text-align: right; padding-right: 10px">Versus Peer Group</td>
+                <td width="10%" style="background-color: darkred"></td>
+                <td width="10%" style="background-color: #0e0f2b"></td>
+                <td width="10%" style="background-color: darkgrey"></td>
+                <td width="10%" style="background-color: #0e0f2b"></td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align:center">+ Above Relative Benchmark, - Below Relative Benchmark, 0 In line with Relative Benchmark (+/- 50 basis points)</p>
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th style="text-align:center; border:solid; border-width:1px;">Quarter</th>
+                <th style="text-align:center; border:solid; border-width:1px;">1 Yr</th>
+                <th style="text-align:center; border:solid; border-width:1px;">3 Yr</th>
+                <th style="text-align:center; border:solid; border-width:1px;">5 Yr</th>
+            </tr>
+        </thead>
+        <tbody style="border-top:solid; border-bottom:solid; border-width:1px">
+            <tr *ngFor="let perfPeersBottom of perfPeersBottoms let index=index">
+                <td width="60%" id="type">
+                    {{perfPeersBottom.typeBottom}} <br />
+                    {{perfPeersBottom.followTypeBottom}}
+                </td>
+                <td width="10%"
+                    [ngClass]="{'grey': isGreyQtrBottom(index)}">
+                    {{perfPeersBottom.quarterBottom}}
+                </td>
+                <td width="10%"
+                    [ngClass]="{'red': isRed1yrBottom(index)}">
+                    {{perfPeersBottom.oneYrBottom}}
+                </td>
+                <td width="10%"
+                    [ngClass]="{'navy': isNavy3yrBottom(index),
+                    'red': isRed3yrBottom(index),
+                    'grey': isGrey3yrBottom(index)}">
+                    {{perfPeersBottom.threeYrBottom}}
+                </td>
+                <td width="60%"
+                    [ngClass]="{'navy': isNavy5yrBottom(index),
+                    'red': isRed5yrBottom(index)}">
+                    {{perfPeersBottom.fiveYrBottom}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

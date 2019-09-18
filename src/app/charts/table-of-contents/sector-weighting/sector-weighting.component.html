@@ -1,3 +1,4 @@
+<button class='no-print' printSectionId="content" [useExistingCss]="true" ngxPrint>PRINT ALL</button>
 <div id="content">
     <div>
         <h3 style="float: left"><strong>Sector Weighting</strong></h3>
@@ -5,163 +6,167 @@
     </div>
     <hr />
     <br />
-    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <h6 id="date" style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
     <br />
-    <h4 style="text-align:center"><strong>Aggressive/Defensive vs. DeMarche Small Cap Relative Value Index - Last Four Quarters</strong></h4>
-    <br />
-    <table id="data-table">
-        <thead>
-            <tr>
-                <th></th>
-                <th colspan="2">6/30/2016</th>
-                <th colspan="2">9/30/2016</th>
-                <th colspan="2">12/31/2016</th>
-                <th colspan="2">3/31/2016</th>
+    <button class='no-print' printSectionId="agg-def" [useExistingCss]="true" ngxPrint>PRINT</button>
+    <div id="agg-def">
+        <h4 style="text-align:center"><strong>Aggressive/Defensive vs. DeMarche Small Cap Relative Value Index - Last Four Quarters</strong></h4>
+        <br />
+        <table id="data-table" class="border-bottom">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th colspan="2">6/30/2016</th>
+                    <th colspan="2">9/30/2016</th>
+                    <th colspan="2">12/31/2016</th>
+                    <th colspan="2">3/31/2016</th>
 
-            </tr>
-            <tr>
-                <th></th>
-                <th colspan="2">(%)</th>
-                <th colspan="2">(%)</th>
-                <th colspan="2">(%)</th>
-                <th colspan="2">(%)</th>
-            </tr>
-            <tr style="border-top:solid; font-style: italic">
-                <th></th>
-                <th style="border-left:solid">Mgr</th>
-                <th>Index</th>
-                <th style="border-left:solid">Mgr</th>
-                <th>Index</th>
-                <th style="border-left:solid">Mgr</th>
-                <th>Index</th>
-                <th style="border-left:solid">Mgr</th>
-                <th>Index</th>
-            </tr>
-        </thead>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th colspan="2">(%)</th>
+                    <th colspan="2">(%)</th>
+                    <th colspan="2">(%)</th>
+                    <th colspan="2">(%)</th>
+                </tr>
+                <tr class="border" style="font-style: italic">
+                    <th></th>
+                    <th class="border-left">Mgr</th>
+                    <th>Index</th>
+                    <th class="border-left">Mgr</th>
+                    <th>Index</th>
+                    <th class="border-left">Mgr</th>
+                    <th>Index</th>
+                    <th class="border-left">Mgr</th>
+                    <th>Index</th>
+                </tr>
+            </thead>
 
-        <tbody style="border-top:solid; border-bottom:solid">
-            <tr *ngFor="let sectorWeight of sectorWeights">
-                <td style="text-align:left; border-right:solid; width:30%">
-                    {{sectorWeight.type}}
-                </td>
-                <td [ngClass]="{'setParens':isNegative(sectorWeight.june16mgr),
+            <tbody>
+                <tr *ngFor="let sectorWeight of sectorWeights">
+                    <td style="text-align:left; width:30%">
+                        {{sectorWeight.type}}
+                    </td>
+                    <td class="border-left" [ngClass]="{'setParens':isNegative(sectorWeight.june16mgr),
                         'makeBold':isHigher(sectorWeight.june16mgr, sectorWeight.june16inx)}">
-                    {{sectorWeight.june16mgr | number:'1.1-1' | convertToSpaces: '-'}}
-                </td>
-                <td style="border-right:solid"
-                    [ngClass]="{'setParens':isNegative(sectorWeight.june16inx),
+                        {{sectorWeight.june16mgr | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td [ngClass]="{'setParens':isNegative(sectorWeight.june16inx),
                         'makeBold':isHigher(sectorWeight.june16inx, sectorWeight.june16mgr)}">
-                    {{sectorWeight.june16inx | number:'1.1-1' | convertToSpaces: '-'}}
-                </td>
-                <td [ngClass]="{'setParens':isNegative(sectorWeight.sept16mgr),
+                        {{sectorWeight.june16inx | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td class="border-left" [ngClass]="{'setParens':isNegative(sectorWeight.sept16mgr),
                         'makeBold':isHigher(sectorWeight.sept16mgr, sectorWeight.sept16inx)}">
-                    {{sectorWeight.sept16mgr | number:'1.1-1' | convertToSpaces: '-'}}
-                </td>
-                <td style="border-right:solid"
-                    [ngClass]="{'setParens':isNegative(sectorWeight.sept16inx),
+                        {{sectorWeight.sept16mgr | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td [ngClass]="{'setParens':isNegative(sectorWeight.sept16inx),
                         'makeBold':isHigher(sectorWeight.sept16inx, sectorWeight.sept16mgr)}">
-                    {{sectorWeight.sept16inx | number:'1.1-1' | convertToSpaces: '-'}}
-                </td>
-                <td [ngClass]="{'setParens':isNegative(sectorWeight.dec16mgr),
+                        {{sectorWeight.sept16inx | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td class="border-left" [ngClass]="{'setParens':isNegative(sectorWeight.dec16mgr),
                         'makeBold':isHigher(sectorWeight.dec16mgr, sectorWeight.dec16inx )}">
-                    {{sectorWeight.dec16mgr | number:'1.1-1' | convertToSpaces: '-'}}
-                </td>
-                <td style="border-right:solid"
-                    [ngClass]="{'setParens':isNegative(sectorWeight.dec16inx),
+                        {{sectorWeight.dec16mgr | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td [ngClass]="{'setParens':isNegative(sectorWeight.dec16inx),
                         'makeBold':isHigher(sectorWeight.dec16inx, sectorWeight.dec16mgr)}">
-                    {{sectorWeight.dec16inx | number:'1.1-1' | convertToSpaces: '-'}}
-                </td>
-                <td [ngClass]="{'setParens':isNegative(sectorWeight.mar17mgr),
+                        {{sectorWeight.dec16inx | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td class="border-left" [ngClass]="{'setParens':isNegative(sectorWeight.mar17mgr),
                         'makeBold':isHigher(sectorWeight.mar17mgr, sectorWeight.mar17inx)}">
-                    {{sectorWeight.mar17mgr | number:'1.1-1' | convertToSpaces: '-'}}
-                </td>
-                <td [ngClass]="{'setParens':isNegative(sectorWeight.mar17inx),
+                        {{sectorWeight.mar17mgr | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td [ngClass]="{'setParens':isNegative(sectorWeight.mar17inx),
                         'makeBold':isHigher(sectorWeight.mar17inx, sectorWeight.mar17mgr)}">
-                    {{sectorWeight.mar17inx | number:'1.1-1' | convertToSpaces: '-'}}
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <p style="text-align:center">For each pair of Manager and Index Weightings the higher value is in bold</p>
-<br />
-    <app-agg-def-graph></app-agg-def-graph>
-<br />
-<h4 style="text-align:center"><strong>Growth/Value vs. DeMarche Small Cap Relative Value Index - Last Four Quarters</strong></h4>
-<br />
-<table id="data-table">
-    <thead>
-        <tr>
-            <th></th>
-            <th colspan="2">6/30/2016</th>
-            <th colspan="2">9/30/2016</th>
-            <th colspan="2">12/31/2016</th>
-            <th colspan="2">3/31/2016</th>
+                        {{sectorWeight.mar17inx | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align:center">For each pair of Manager and Index Weightings the higher value is in bold</p>
+        <br />
+        <div id="agg-def-graph">
+            <app-agg-def-graph></app-agg-def-graph>
+        </div>
+        <br />
+    </div>
+    <button class='no-print' printSectionId="growth-val" [useExistingCss]="true" ngxPrint>PRINT</button>
+    <div id="growth-val">
+        <h4 style="text-align:center"><strong>Growth/Value vs. DeMarche Small Cap Relative Value Index - Last Four Quarters</strong></h4>
+        <br />
+        <table id="data-table" class="border-bottom">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th colspan="2">6/30/2016</th>
+                    <th colspan="2">9/30/2016</th>
+                    <th colspan="2">12/31/2016</th>
+                    <th colspan="2">3/31/2016</th>
 
-        </tr>
-        <tr>
-            <th></th>
-            <th colspan="2">(%)</th>
-            <th colspan="2">(%)</th>
-            <th colspan="2">(%)</th>
-            <th colspan="2">(%)</th>
-        </tr>
-        <tr style="border-top:solid; font-style: italic">
-            <th></th>
-            <th style="border-left:solid">Mgr</th>
-            <th>Index</th>
-            <th style="border-left:solid">Mgr</th>
-            <th>Index</th>
-            <th style="border-left:solid">Mgr</th>
-            <th>Index</th>
-            <th style="border-left:solid">Mgr</th>
-            <th>Index</th>
-        </tr>
-    </thead>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th colspan="2">(%)</th>
+                    <th colspan="2">(%)</th>
+                    <th colspan="2">(%)</th>
+                    <th colspan="2">(%)</th>
+                </tr>
+                <tr class="border" style="font-style: italic">
+                    <th></th>
+                    <th class="border-left">Mgr</th>
+                    <th>Index</th>
+                    <th class="border-left">Mgr</th>
+                    <th>Index</th>
+                    <th class="border-left">Mgr</th>
+                    <th>Index</th>
+                    <th class="border-left">Mgr</th>
+                    <th>Index</th>
+                </tr>
+            </thead>
 
-    <tbody style="border-top:solid; border-bottom:solid">
-        <tr *ngFor="let weightingGrowthValue of weightingGrowthValues">
-            <td style="text-align:left; border-right:solid; width:30%">
-                {{weightingGrowthValue.typegrowth}}
-            </td>
-            <td [ngClass]="{'setParens':isNegative(weightingGrowthValue.june16mgrgrowth),
+            <tbody>
+                <tr *ngFor="let weightingGrowthValue of weightingGrowthValues">
+                    <td style="text-align:left; width:30%">
+                        {{weightingGrowthValue.typegrowth}}
+                    </td>
+                    <td class="border-left" [ngClass]="{'setParens':isNegative(weightingGrowthValue.june16mgrgrowth),
                         'makeBold':isHigher(weightingGrowthValue.june16mgrgrowth, weightingGrowthValue.june16inxgrowth)}">
-                {{weightingGrowthValue.june16mgrgrowth | number:'1.1-1' | convertToSpaces: '-'}}
-            </td>
-            <td style="border-right:solid"
-                [ngClass]="{'setParens':isNegative(weightingGrowthValue.june16inxgrowth),
+                        {{weightingGrowthValue.june16mgrgrowth | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td [ngClass]="{'setParens':isNegative(weightingGrowthValue.june16inxgrowth),
                         'makeBold':isHigher(weightingGrowthValue.june16inxgrowth, weightingGrowthValue.june16mgrgrowth)}">
-                {{weightingGrowthValue.june16inxgrowth | number:'1.1-1' | convertToSpaces: '-'}}
-            </td>
-            <td [ngClass]="{'setParens':isNegative(weightingGrowthValue.sept16mgrgrowth),
+                        {{weightingGrowthValue.june16inxgrowth | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td class="border-left" [ngClass]="{'setParens':isNegative(weightingGrowthValue.sept16mgrgrowth),
                         'makeBold':isHigher(weightingGrowthValue.sept16mgrgrowth, weightingGrowthValue.sept16inxgrowth)}">
-                {{weightingGrowthValue.sept16mgrgrowth | number:'1.1-1' | convertToSpaces: '-'}}
-            </td>
-            <td style="border-right:solid"
-                [ngClass]="{'setParens':isNegative(weightingGrowthValue.sept16inxgrowth),
+                        {{weightingGrowthValue.sept16mgrgrowth | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td [ngClass]="{'setParens':isNegative(weightingGrowthValue.sept16inxgrowth),
                         'makeBold':isHigher(weightingGrowthValue.sept16inxgrowth, weightingGrowthValue.sept16mgrgrowth)}">
-                {{weightingGrowthValue.sept16inxgrowth | number:'1.1-1' | convertToSpaces: '-'}}
-            </td>
-            <td [ngClass]="{'setParens':isNegative(weightingGrowthValue.dec16mgrgrowth),
+                        {{weightingGrowthValue.sept16inxgrowth | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td class="border-left" [ngClass]="{'setParens':isNegative(weightingGrowthValue.dec16mgrgrowth),
                         'makeBold':isHigher(weightingGrowthValue.dec16mgrgrowth, weightingGrowthValue.dec16inxgrowth)}">
-                {{weightingGrowthValue.dec16mgrgrowth | number:'1.1-1' | convertToSpaces: '-'}}
-            </td>
-            <td style="border-right:solid"
-                [ngClass]="{'setParens':isNegative(weightingGrowthValue.dec16inxgrowth),
+                        {{weightingGrowthValue.dec16mgrgrowth | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td [ngClass]="{'setParens':isNegative(weightingGrowthValue.dec16inxgrowth),
                         'makeBold':isHigher(weightingGrowthValue.dec16inxgrowth, weightingGrowthValue.dec16mgrgrowth)}">
-                {{weightingGrowthValue.dec16inxgrowth | number:'1.1-1' | convertToSpaces: '-'}}
-            </td>
-            <td [ngClass]="{'setParens':isNegative(weightingGrowthValue.mar17mgrgrowth),
+                        {{weightingGrowthValue.dec16inxgrowth | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td class="border-left" [ngClass]="{'setParens':isNegative(weightingGrowthValue.mar17mgrgrowth),
                         'makeBold':isHigher(weightingGrowthValue.mar17mgrgrowth, weightingGrowthValue.mar17inxgrowth)}">
-                {{weightingGrowthValue.mar17mgrgrowth | number:'1.1-1' | convertToSpaces: '-'}}
-            </td>
-            <td [ngClass]="{'setParens':isNegative(weightingGrowthValue.mar17inxgrowth),
+                        {{weightingGrowthValue.mar17mgrgrowth | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                    <td [ngClass]="{'setParens':isNegative(weightingGrowthValue.mar17inxgrowth),
                         'makeBold':isHigher(weightingGrowthValue.mar17inxgrowth, weightingGrowthValue.mar17mgrgrowth)}">
-                {{weightingGrowthValue.mar17inxgrowth | number:'1.1-1' | convertToSpaces: '-'}}
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p style="text-align:center">For each pair of Manager and Index Weightings the higher value is in bold</p>
-<br />
-    <app-growth-value-graph></app-growth-value-graph>
+                        {{weightingGrowthValue.mar17inxgrowth | number:'1.1-1' | convertToSpaces: '-'}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align:center">For each pair of Manager and Index Weightings the higher value is in bold</p>
+        <br />
+        <div id="growth-value-graph">
+            <app-growth-value-graph></app-growth-value-graph>
+        </div>
+    </div>
 </div>

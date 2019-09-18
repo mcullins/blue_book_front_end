@@ -3,8 +3,8 @@
 table {
     border: solid;
     border-spacing: 10px 10px;
-    height:35em; 
-    width: 80%;
+    height:30em; 
+    width: 100%;
     margin: auto;
 }
 
@@ -13,4 +13,8 @@ td {
     border: solid;
 }
 
-
+@media print {
+    table {
+        border-collapse: collapse;
+    }
+}

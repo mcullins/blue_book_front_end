@@ -1,0 +1,21 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\charts",
+    "\\src\\app\\charts\\table-of-contents",
+    "\\src\\app\\charts\\table-of-contents\\abbot-capital\\ac-annual-perf",
+    "\\src\\app\\charts\\table-of-contents\\commonfund-intl-pe",
+    "\\src\\app\\charts\\table-of-contents\\commonfund-intl-pe\\cip-mgr-risk-analysis\\cip-capture-ratio",
+    "\\src\\app\\charts\\table-of-contents\\commonfund-vp",
+    "\\src\\app\\charts\\table-of-contents\\commonfund-vp\\cv-annual-perf",
+    "\\src\\app\\charts\\table-of-contents\\commonfund-vp\\cv-mgr-risk-analysis\\cv-capture-ratio",
+    "\\src\\app\\charts\\table-of-contents\\commonfund-vp\\cv-mgr-risk-analysis\\cv-risk-return",
+    "\\src\\app\\charts\\table-of-contents\\dodge-cox-equity",
+    "\\src\\app\\charts\\table-of-contents\\dodge-cox-equity\\d-c-annual-perf",
+    "\\src\\app\\charts\\table-of-contents\\dodge-cox-equity\\d-c-mgr-risk-analysis"
+  ],
+  "SelectedNode": "\\src\\app\\charts\\table-of-contents\\commonfund-vp\\cv-annual-perf\\cv-annual-perf.component.css",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,3 +1,4 @@
+<button class='no-print' printSectionId="content" [useExistingCss]="true" ngxPrint>PRINT</button>
 <div id="content">
     <div>
         <h3 style="float: left"><strong>Sector Attribution & Allocation</strong></h3>
@@ -26,54 +27,51 @@
                 <th colspan="2">(%)</th>
                 <th></th>
             </tr>
-            <tr style="border-top:solid; font-style: italic">
+            <tr id="sectorAttr" style="font-style: italic">
                 <th></th>
-                <th style="border-left:solid">Mgr</th>
+                <th class="border-left">Mgr</th>
                 <th>Index</th>
-                <th style="border-left:solid">Mgr</th>
+                <th class="border-left">Mgr</th>
                 <th>Index</th>
-                <th style="border-left:solid">Weight</th>
+                <th class="border-left">Weight</th>
                 <th>Return</th>
-                <th style="border-left:solid">Mgr</th>
+                <th class="border-left">Mgr</th>
             </tr>
         </thead>
-        <tbody style="border-top:solid; border-bottom:solid">
+        <tbody style="border-top:solid; border-bottom:solid;">
             <tr *ngFor="let sectorAtt of sectorAtts">
-                <td style="text-align:left; border-right:solid">
+                <td style="text-align:left;">
                     {{sectorAtt.gics}}
                 </td>
-                <td [ngClass]="{'setParens':isNegative(sectorAtt.allocMgr),
+                <td class="border-left" [ngClass]="{'setParens':isNegative(sectorAtt.allocMgr),
                         'makeBold':isHigher(sectorAtt.allocMgr, sectorAtt.allocInx)}">
                     {{sectorAtt.allocMgr | number:'1.1-1' | convertToSpaces: '-'}}
                 </td>
-                <td style="border-right:solid"
-                    [ngClass]="{'setParens':isNegative(sectorAtt.allocInx),
+                <td [ngClass]="{'setParens':isNegative(sectorAtt.allocInx),
                         'makeBold':isHigher(sectorAtt.allocInx, sectorAtt.allocMgr)}">
                     {{sectorAtt.allocInx | number:'1.1-1' | convertToSpaces: '-'}}
                 </td>
-                <td [ngClass]="{'setParens':isNegative(sectorAtt.returnMgr),
+                <td class="border-left" [ngClass]="{'setParens':isNegative(sectorAtt.returnMgr),
                         'makeBold':isHigher(sectorAtt.returnMgr, sectorAtt.returnInx)}">
                     {{sectorAtt.returnMgr | number:'1.1-1' | convertToSpaces: '-'}}
                 </td>
-                <td style="border-right:solid"
-                    [ngClass]="{'setParens':isNegative(sectorAtt.returnInx),
+                <td [ngClass]="{'setParens':isNegative(sectorAtt.returnInx),
                         'makeBold':isHigher(sectorAtt.returnInx, sectorAtt.returnMgr)}">
                     {{sectorAtt.returnInx | number:'1.1-1' | convertToSpaces: '-'}}
                 </td>
-                <td [ngClass]="{'setParens':isNegative(sectorAtt.mgrVarWeight),
+                <td class="border-left" [ngClass]="{'setParens':isNegative(sectorAtt.mgrVarWeight),
                         'makeBold':isHigher(sectorAtt.mgrVarWeight, sectorAtt.mgrVarReturn)}">
                     {{sectorAtt.mgrVarWeight | number:'1.1-1' | convertToSpaces: '-'}}
                 </td>
-                <td style="border-right:solid"
-                    [ngClass]="{'setParens':isNegative(sectorAtt.mgrVarReturn),
+                <td [ngClass]="{'setParens':isNegative(sectorAtt.mgrVarReturn),
                         'makeBold':isHigher(sectorAtt.mgrVarReturn, sectorAtt.mgrVarWeight)}">
                     {{sectorAtt.mgrVarReturn | number:'1.1-1' | convertToSpaces: '-'}}
                 </td>
-                <td [ngClass]="{'setParens':isNegative(sectorAtt.contribution)}">
+                <td class="border-left" [ngClass]="{'setParens':isNegative(sectorAtt.contribution)}">
                     {{sectorAtt.contribution | number:'1.1-1' | convertToSpaces: '-'}}
                 </td>
             </tr>
-            <tr style="border-top:solid; font-weight: bold">
+            <tr id="sectorAttr" style="font-weight: bold">
                 <td></td>
                 <td></td>
                 <td></td>
@@ -90,7 +88,8 @@
 
     <p style="text-align:center">For each pair of Manager and Index Weightings the higher value is in bold</p>
     <br />
-    <app-eco-orientation-graph></app-eco-orientation-graph>
-
+    <div id="eco-orient">
+        <app-eco-orientation-graph></app-eco-orientation-graph>
+    </div>
 </div>
 

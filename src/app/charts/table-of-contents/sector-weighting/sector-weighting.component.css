@@ -21,3 +21,47 @@ tr {
 .makeBold {
     font-weight: bold;
 }
+
+.border-left {
+    border-left: solid;
+}
+.border th {
+    border-top: solid;
+    border-bottom: solid;
+}
+.border-bottom {
+    border-bottom: solid;
+}
+#agg-def-graph, #growth-value-graph {
+    text-align: center;
+}
+
+@media print {
+    .no-print {
+        display: none;
+    }
+    #date {
+        padding-right: 0;
+        font-size: 1em;
+    }
+    table {
+        border-spacing: 0;
+    }
+
+    .border-left {
+        border-left: solid;
+    }
+    #agg-def{
+        page-break-after: always;
+    }
+    .border th{
+        border-top: solid;
+        border-bottom: solid;
+    }
+    .border-bottom {
+        border-bottom:solid;
+    }
+    #agg-def-graph, #growth-value-graph {
+        text-align: left;
+    }
+}

@@ -37,3 +37,55 @@ td {
     border-top: solid;
     border-width: thin;
 }
+
+#cumulative-return-graph, #tot-val-gainedlost-graph{
+    display: inline-block;
+    width: 49%;
+}
+#five-largest-holdings, #average-portfolio, #highest-price-change, #lowest-price-change{
+    display: inline-block;
+    width: 49%;
+}
+
+
+@media print {
+    .no-print{
+        display: none;
+    }
+    #date {
+        padding-right: 0;
+        font-size: 1em;
+    }
+    .border td {
+        border-bottom: double;
+       
+    }
+    #cumulative-table {
+        padding: 0 !important;
+        border-spacing: 0;
+    }
+    #cumulative-return-graph, #tot-val-gainedlost-graph{
+        display: block;
+        padding: 0;
+        width: 100% !important;
+    }
+    #tot-val-gainedlost-graph{
+        page-break-after: always;
+    }
+    #mrcvsro{
+        page-break-after: always;
+    }
+    #mrcvsro-row th {
+        border-bottom: solid;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    #average-portfolio td {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    #five-largest-holdings, #average-portfolio, #highest-price-change, #lowest-price-change {
+        display: block;
+        width: 100%;
+    }
+}

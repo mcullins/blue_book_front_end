@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ManagerReviewComponent } from '@app/charts/table-of-contents/manager-review/manager-review.component';
 
-import { ManagerReviewComponent } from './manager-review.component';
 
 describe('ManagerReviewComponent', () => {
   let component: ManagerReviewComponent;

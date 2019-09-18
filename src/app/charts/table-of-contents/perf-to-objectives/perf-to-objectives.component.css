@@ -1,10 +1,9 @@
-#abs-objective{
+#abs-objective, #rel-objective, #rel-to-totfunduniv, #five-yrs-ending {
     display: inline-block;
-    width: 49%
+    width: 49%;
 }
 
 @media print {
-
     .no-print {
         display: none;
     }
@@ -13,8 +12,9 @@
         font-size: 1em;
     }
 
-    #abs-objective{
-        page-break-after: always;
+    #abs-objective, #rel-objective, #rel-to-totfunduniv, #five-yrs-ending {
+        height: 500px;
+        display: block;
     }
 
 }

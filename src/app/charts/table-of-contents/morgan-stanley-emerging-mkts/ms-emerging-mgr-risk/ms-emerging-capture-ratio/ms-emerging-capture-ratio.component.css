@@ -15,3 +15,13 @@ td {
     border: solid;
     border-width: 1px;
 }
+@media print {
+
+    table {
+        border-collapse: collapse;
+    }
+
+    #cap-ratio-chart {
+        page-break-after: always;
+    }
+}

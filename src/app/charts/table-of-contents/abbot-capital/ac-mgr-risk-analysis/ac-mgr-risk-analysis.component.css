@@ -1,0 +1,10 @@
+@media print {
+    .no-print {
+        display: none;
+    }
+
+    #date {
+        padding: 0;
+        font-size: 1em;
+    }
+}

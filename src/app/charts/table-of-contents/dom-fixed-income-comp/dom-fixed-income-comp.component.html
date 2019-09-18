@@ -1,13 +1,20 @@
+<button class='no-print' printSectionId="content" [useExistingCss]="true" ngxPrint>PRINT</button>
 <div id="content">
     <div>
         <h3 style="float: left"><strong>DeMarche Domestic Fixed Income Manager Style Universe Comparisons</strong></h3>
     </div>
     <hr />
     <br />
-    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <h6 id="date" style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
     <br />
-    <app-dom-three-yr-graph></app-dom-three-yr-graph>
+    <button class='no-print' printSectionId="three-year" [useExistingCss]="true" ngxPrint>PRINT GRAPH</button>
+    <div id="three-year">
+        <app-dom-three-yr-graph></app-dom-three-yr-graph>
+    </div>
     <br />
-    <app-dom-five-yr-graph></app-dom-five-yr-graph>
+    <button class='no-print' printSectionId="five-year" [useExistingCss]="true" ngxPrint>PRINT GRAPH</button>
+    <div id="five-year">
+        <app-dom-five-yr-graph></app-dom-five-yr-graph>
+    </div>
 
 </div>

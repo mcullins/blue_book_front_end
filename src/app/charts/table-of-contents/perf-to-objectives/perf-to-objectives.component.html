@@ -15,17 +15,20 @@
         <div id="abs-objective">
             <app-abs-objective-graph></app-abs-objective-graph>
         </div>
-            <app-rel-objective-graph id="rel-objective"></app-rel-objective-graph>
-
+        <div id="rel-objective">
+            <app-rel-objective-graph></app-rel-objective-graph>
+        </div>
             <br />
             <br />
             <button class='no-print' printSectionId="rel-to-totfunduniv" [useExistingCss]="true" ngxPrint>PRINT GRAPH</button>
             <button class='no-print' printSectionId="five-yrs-ending" [useExistingCss]="true" ngxPrint style="margin-left:43%">PRINT GRAPH</button>
             <br />
-
-            <app-rel-to-totfunduniv id="rel-to-totfunduniv"></app-rel-to-totfunduniv>
-            <app-five-yrs-ending id="five-yrs-ending"></app-five-yrs-ending>
-
+            <div  id="rel-to-totfunduniv">
+                <app-rel-to-totfunduniv></app-rel-to-totfunduniv>
+            </div>
+            <div  id="five-yrs-ending">
+                <app-five-yrs-ending></app-five-yrs-ending>
+            </div>
             <br />
         </div>
     </div>

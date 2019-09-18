@@ -26,3 +26,21 @@ td {
 .isShaded{
     background-color: darkgrey;
 }
+
+@media print {
+    .no-print {
+        display: none;
+    }
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+    #header{
+        padding: 0;
+        font-size: 1em;
+    }
+    #date {
+        padding: 0;
+        font-size: 1em;
+    }
+}

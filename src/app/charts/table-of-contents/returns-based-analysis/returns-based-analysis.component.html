@@ -1,3 +1,4 @@
+<button class='no-print' printSectionId="content" [useExistingCss]="true" ngxPrint>PRINT</button>
 <div id="content">
     <div>
         <h3 style="float: left"><strong>Manager Performance Review</strong></h3>
@@ -5,16 +6,22 @@
     </div>
     <hr />
     <br />
-    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <h6 id="date" style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
     <br />
-    <app-dom-equity-graph></app-dom-equity-graph>
+    <button class='no-print' printSectionId="dom-equity-graph" [useExistingCss]="true" ngxPrint>PRINT GRAPH</button>
+    <div id="dom-equity-graph">
+        <app-dom-equity-graph></app-dom-equity-graph>
+        <br />
+        <p style="text-align:center">The smallest circle represents the most recent 5-year rolling period.</p>
+        <p style="text-align:center">Composite data used for managers with less than 20 quarters of data.</p>
+    </div>
     <br />
-    <p style="text-align:center">The smallest circle represents the most recent 5-year rolling period.</p>
-    <p style="text-align:center">Composite data used for managers with less than 20 quarters of data.</p>
     <br />
-    <br />
-    <app-intl-equity-graph></app-intl-equity-graph>
-    <br />
-    <p style="text-align:center">The smallest circle represents the most recent 5-year rolling period.</p>
-    <p style="text-align:center">Composite data used for managers with less than 20 quarters of data.</p>
+    <button class='no-print' printSectionId="intl-equity-graph" [useExistingCss]="true" ngxPrint>PRINT GRAPH</button>
+    <div id="intl-equity-graph">
+        <app-intl-equity-graph></app-intl-equity-graph>
+        <br />
+        <p style="text-align:center">The smallest circle represents the most recent 5-year rolling period.</p>
+        <p style="text-align:center">Composite data used for managers with less than 20 quarters of data.</p>
+    </div>
 </div>

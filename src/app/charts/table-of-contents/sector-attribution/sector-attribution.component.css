@@ -17,6 +17,45 @@ tr {
     content: ')';
 }
 
+.border-left{
+    border-left: solid;
+}
+
 .makeBold {
     font-weight: bold;
 }
+#sectorAttr {
+    border-top: solid;
+    border-bottom: solid;
+}
+#eco-orient {
+    text-align: center;
+}
+
+    @media print {
+        table {
+            border-spacing: 0;
+        }
+
+        .border-left {
+            border-left: solid;
+        }
+
+        #sectorAttr th {
+            border-top: solid;
+            border-bottom: solid;
+        }
+
+        #sectorAttr td {
+            border-top: solid;
+            border-bottom: solid;
+        }
+
+        #eco-orient {
+            display: block;
+            padding: 0;
+            width: 100% !important;
+            text-align: left !important;
+        }
+    }
+

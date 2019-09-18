@@ -1,7 +1,9 @@
-<div style="width: 800px; height: 60em; margin: auto;">
-    <highcharts-chart [Highcharts]="Highcharts"
-                      [options]="chartOptions"
-                      style="width: 100%; height:80%; display: inline-block;"></highcharts-chart>
+<div style="width: 800px; height: 50em; margin: auto;">
+    <div id="five-year-chart">
+        <highcharts-chart [Highcharts]="Highcharts"
+                          [options]="chartOptions"
+                          style="width: 100%; height:500px; display: inline-block;"></highcharts-chart>
+    </div>
     <table>
         <thead>
             <tr>
@@ -25,5 +27,5 @@
                 <td>-26.0</td>
             </tr>
         </tbody>
-    </table>
+    </table> 
 </div>

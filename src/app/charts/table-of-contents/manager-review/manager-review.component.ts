@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ManagerReviewService } from './manager-review.service';
-// import { DataService } from './data.service';
-import { MgrRvw } from './dataclass';
-
-import { first } from 'rxjs/operator/first';
+import { ManagerReviewService } from '@app/charts/table-of-contents/manager-review/manager-review.service';
 
 
 
@@ -13,7 +9,7 @@ import { first } from 'rxjs/operator/first';
   selector: 'app-manager-review',
   templateUrl: './manager-review.component.html',
     styleUrls: ['./manager-review.component.css'],
-    providers: [ManagerReviewService] //, DataService]
+    providers: [ManagerReviewService]
 })
 export class ManagerReviewComponent implements OnInit {
     date: any = new Date();
@@ -45,11 +41,10 @@ export class ManagerReviewComponent implements OnInit {
 
 
     constructor(private managerReviewService: ManagerReviewService) {
-        //private dataService: DataService) {
 
     }
     ngOnInit() {
-        //this.datas = this.managerReviewService.getData();
+        this.datas = this.managerReviewService.getData();
     }   
 
 }

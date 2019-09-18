@@ -1,0 +1,19 @@
+highcharts-chart{
+    height: 40em;
+}
+
+@media print {
+    #perf-calendar-chart{
+    margin: 0;
+    padding: 0;
+    text-align: left !important;
+    height: 70% !important;
+    }
+    highcharts-chart{
+        height: 10em !important;
+    }
+    #date {
+        padding-right: 0;
+        font-size: 1em;
+    }
+}

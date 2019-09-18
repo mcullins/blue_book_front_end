@@ -59,7 +59,7 @@ export class CvRiskReturnComponent implements OnInit {
             startOnTick: true,
             endOnTick: true,
             showLastLabel: true,
-            offset: -75
+            offset: -53
         },
         yAxis: {
             tickLength: 10,

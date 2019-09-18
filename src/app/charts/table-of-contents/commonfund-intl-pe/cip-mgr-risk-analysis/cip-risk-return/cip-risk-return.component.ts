@@ -59,7 +59,7 @@ export class CipRiskReturnComponent implements OnInit {
             startOnTick: true,
             endOnTick: true,
             showLastLabel: true,
-            offset: -50
+            offset: -37
         },
         yAxis: {
             tickLength: 10,
@@ -87,7 +87,7 @@ export class CipRiskReturnComponent implements OnInit {
             verticalAlign: 'bottom',
             backgroundColor: '#FFFFFF',
             borderWidth: 1,
-            y: -25
+            y: -35
         },
         plotOptions: {
             scatter: {

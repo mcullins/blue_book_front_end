@@ -1,3 +1,4 @@
+<button class='no-print' printSectionId="content" [useExistingCss]="true" ngxPrint>PRINT</button>
 <div id="content">
     <div>
         <h3 style="float: left"><strong>Manager Risk Analysis</strong></h3>
@@ -5,7 +6,7 @@
     </div>
     <hr />
     <br />
-    <h6 style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
+    <h6 id="date" style="text-align:right; border-top:solid">{{date | date:'MM/dd/yyyy'}}</h6>
     <br />
     <br />
     <app-ms-intl-five-yr-risk-return></app-ms-intl-five-yr-risk-return>

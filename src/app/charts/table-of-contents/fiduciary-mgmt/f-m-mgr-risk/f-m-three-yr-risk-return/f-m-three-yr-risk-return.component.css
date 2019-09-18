@@ -17,3 +17,14 @@ td {
     border: solid;
     border-width: 1px;
 }
+@media print {
+
+    table {
+        border-collapse: collapse;
+        page-break-after: always;
+    }
+
+    #three-yr-chart {
+        page-break-after: always;
+    }
+}

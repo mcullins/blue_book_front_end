@@ -125,6 +125,7 @@ import { TotalFundAssetAllocChartsComponent } from './total-fund-asset-alloc-cha
 import { TotalfundcurrentchartComponent } from './total-fund-asset-alloc-charts/totalfundcurrentchart/totalfundcurrentchart.component';
 import { TotalfundtargetComponent } from './total-fund-asset-alloc-charts/totalfundtarget/totalfundtarget.component';
 import { NgxPrintModule } from 'ngx-print';
+import { AllComponent } from './all/all.component';
 
 
 
@@ -260,7 +261,8 @@ import { NgxPrintModule } from 'ngx-print';
         CcpAnnualPerfComponent,
         CcpCaptureRatioComponent,
         CcpRiskReturnComponent,
-        TotalFundAssetAllocChartsComponent
+        TotalFundAssetAllocChartsComponent,
+        AllComponent
     ]
 })
 export class TableOfContentsModule { }

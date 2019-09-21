@@ -66,6 +66,7 @@ import { CcpLongTermPerfComponent } from "./commonfund-cap-partners/ccp-long-ter
 import { CcpMgrRiskAnalysisComponent } from "./commonfund-cap-partners/ccp-mgr-risk-analysis/ccp-mgr-risk-analysis.component";
 import { CcpAnnualPerfComponent } from "./commonfund-cap-partners/ccp-annual-perf/ccp-annual-perf.component";
 import { TotalFundAssetAllocChartsComponent } from "./total-fund-asset-alloc-charts/total-fund-asset-alloc-charts.component";
+import { AllComponent } from "@app/charts/table-of-contents/all/all.component";
 
 const routes: Routes = [
   {
@@ -79,6 +80,13 @@ const routes: Routes = [
         path: "consultingteam",
         component: ConsultingteamComponent,
         data: { pageTitle: "Consulting Team" }
+      },
+      {
+        path: "all",
+        component: AllComponent,
+        data: {
+          pageTitle: "Complete Report Output"
+        }
       },
       {
         path: "totalfund",

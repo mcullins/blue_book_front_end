@@ -2,8 +2,7 @@
     .no-print {
         display: none;
     }
-    #date {
-        padding-right: 0;
-        font-size: 1em;
+    .page-break{
+        page-break-after: always;
     }
 }

@@ -49,4 +49,7 @@ td {
         padding-right: 0;
         font-size: 1em;
     }
+    .no-print {
+        display: none;
+    }
 }

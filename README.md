@@ -1,3 +1,12 @@
+## NOTES FROM CHRIS HARPER
+
+### Deployment
+
+1. You need awscli installed https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
+2. You need angular/cli installed so you can 'ng build' => npm install -g @angular/cli
+  - this should populate ./dist folder witht the build 
+3. Run ./deploy.sh - this should upload all the components to the amazon s3 bucket
+
 ## AOT Note
 Starting from version 0.4.5 we are supporting AOT builds.  
  

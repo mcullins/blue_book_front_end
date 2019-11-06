@@ -71,13 +71,7 @@ export class IntlFiveYearGraphComponent implements OnInit {
             tickPositions: [-8, -3, 2, 7, 12],
             title: {
                 text: 'Return %'
-            },
-            plotLines: [{
-                value: 0,
-                color: 'black',
-                width: 2,
-                dashStyle: 'LongDashDotDot'
-            }]
+            }
         },
 
         series: [

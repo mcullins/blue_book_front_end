@@ -71,13 +71,7 @@ export class ThreeYrAnnualizedComponent implements OnInit {
             tickPositions: [-4, 1, 6, 11, 16],
             title: {
                 text: 'Return %'
-            },
-            plotLines: [{
-                value: 0,
-                color: 'black',
-                width: 2,
-                dashStyle: "LongDashDotDot"
-            }]
+            }
         },
 
         series: [

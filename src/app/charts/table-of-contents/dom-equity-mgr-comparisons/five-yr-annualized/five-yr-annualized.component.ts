@@ -71,13 +71,7 @@ export class FiveYrAnnualizedComponent implements OnInit {
             tickPositions: [0, 2, 4, 6, 8, 10, 12, 14, 16],
             title: {
                 text: 'Return %'
-            },
-            plotLines: [{
-                value: 0.1,
-                color: 'black',
-                width: 2,
-                dashStyle: 'LongDashDotDot'
-            }]
+            }
         },
 
         series: [

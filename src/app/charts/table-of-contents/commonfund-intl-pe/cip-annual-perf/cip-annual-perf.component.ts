@@ -110,13 +110,7 @@ export class CipAnnualPerfComponent implements OnInit {
             tickInterval: 20,
             title: {
                 text: 'Return %'
-            },
-            plotLines: [{
-                width: 2,
-                value: 0,
-                dashStyle: 'LongDashDotDot',
-                color: 'black'
-            }]
+            }
         },
 
         series: [

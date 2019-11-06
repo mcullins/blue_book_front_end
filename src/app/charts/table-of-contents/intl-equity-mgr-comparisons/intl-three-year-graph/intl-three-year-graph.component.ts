@@ -72,13 +72,7 @@ export class IntlThreeYearGraphComponent implements OnInit {
             tickPositions: [-10, -5, 0, 5, 10, 15],
             title: {
                 text: 'Return %'
-            },
-            plotLines: [{
-                value: 0.1,
-                color: 'black',
-                width: 2,
-                dashStyle: 'LongDashDotDot'
-            }]
+            }
         },
 
         series: [

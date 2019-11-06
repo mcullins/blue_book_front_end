@@ -111,13 +111,7 @@ export class CvAnnualPerfComponent implements OnInit {
             tickInterval: 20,
             title: {
                 text: 'Return %'
-            },
-            plotLines: [{
-                width: 2,
-                value: 0,
-                dashStyle: 'LongDashDotDot',
-                color: 'black'
-            }]
+            }
         },
 
         series: [
@@ -308,7 +302,7 @@ function drawRect(chart) {
         rect.element.remove();
     }
     var xAxis = chart.xAxis[0];
-    rect = chart.renderer.rect(365, chart.chartHeight - xAxis.bottom, 70, 25, 0)
+    rect = chart.renderer.rect(355, chart.chartHeight - xAxis.bottom, 70, 25, 0)
         .attr({
             'stroke-width': 0,
             stroke: '#02007c',

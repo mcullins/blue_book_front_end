@@ -22,19 +22,32 @@ export class FiveYrsEndingComponent implements OnInit {
         },
         xAxis: {
             min: 0,
+            max: 12,
             title: {
                 enabled: true,
                 text: 'Risk (Standard Deviation) %'
             },
             startOnTick: true,
             endOnTick: true,
-            showLastLabel: true
+            showLastLabel: true,
+            plotLines: [{
+                color: '#000000',
+                width: 1,
+                value: 9
+            }],
         },
         yAxis: {
             title: {
                 text: 'Return (Annualized)%'
             },
-            min: 0
+            min: 0,
+            max: 10,
+            tickInterval: 2,
+            plotLines: [{
+                color: '#000000',
+                width: 1,
+                value: 7.1
+            }],
         },
         legend: {
             layout: 'horizontal',
@@ -63,7 +76,7 @@ export class FiveYrsEndingComponent implements OnInit {
                 },
                 tooltip: {
                     headerFormat: '<b>{series.name}</b><br>',
-                    pointFormat: '{point.x} cm, {point.y} kg'
+                    pointFormat: '{point.x}, {point.y}'
                 }
             }
         },
@@ -73,9 +86,9 @@ export class FiveYrsEndingComponent implements OnInit {
             name: 'Manager in Total Fund Universe',
                 color: '#7cacf9',
             data: [[8, 7], [8, 8], [8, 9], [9, 6], [9, 7],
-                [9, 8], [9, 9], [7, 8], [7, 9], [7, 10], [11, 6],
+                [9, 8], [9, 9], [7, 8], [7, 9], [7, 6], [9, 6],
                 [8.4, 7.9], [8.2, 8.8], [8.5, 9.6], [9.4, 6.9], [9.1, 7.8],
-                [9.9, 8.4], [9.5, 9.9], [7.1, 8.2], [7.8, 9.2], [7.7, 10.5], [11.1, 6.8]]
+                [9.9, 8.4], [9.5, 9.9], [7.1, 8.2], [7.8, 9.2], [7.7, 9.5], [8.5, 6.8]]
 
             },
             {

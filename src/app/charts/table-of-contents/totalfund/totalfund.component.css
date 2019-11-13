@@ -29,8 +29,8 @@ td {
     border-bottom: solid;
 }
 
-.isGrey1 {
-    background-color: grey
+.isBlue1 {
+    background-color: steelblue;
 }
 
 @media print {

@@ -1,6 +1,23 @@
 highcharts-chart{
     height: 40em;
 }
+table {
+    border: solid;
+    border-width: 1px;
+}
+
+th {
+    border: solid;
+    border-width: 1px;
+    text-align: center;
+    padding: 10px;
+}
+
+td {
+    border: solid;
+    border-width: 1px;
+    padding: 10px;
+}
 
 @media print {
     #perf-calendar-chart{

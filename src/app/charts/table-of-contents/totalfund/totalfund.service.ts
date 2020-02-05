@@ -1,8 +1,19 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { TestData } from "./testdata";
 
 @Injectable()
 
 export class TotalFundService {
+
+    constructor(private http: HttpClient){}
+
+    getAPIData(): Observable<TestData[]>{
+        console.log("Working");
+        return this.http.get<TestData[]>('https://api.demarche.com/api/values')
+    }
+    
 
     getTotalFundData() {
         return [

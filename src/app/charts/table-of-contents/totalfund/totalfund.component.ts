@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TotalFundService } from './totalfund.service';
+import { TestData } from './testdata';
 
 
 
@@ -12,7 +13,8 @@ import { TotalFundService } from './totalfund.service';
 })
 export class TotalfundComponent implements OnInit {
     private totalFundDatas;
-   
+    public testDatas: TestData[];
+
     date: any = new Date();
         
     isNegative(val: number): boolean {
@@ -38,6 +40,12 @@ export class TotalfundComponent implements OnInit {
 
     ngOnInit() {
         this.totalFundDatas = this.totalFund.getTotalFundData();
+        this.totalFund.getAPIData()
+            .subscribe(
+                (testdata: TestData[]) => this.testDatas = testdata,
+                (err: any) => console.log(err),
+                () => console.log("Loaded data complete")
+            );
         
     }
 

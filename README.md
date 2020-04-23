@@ -1,8 +1,8 @@
-*Created investment management company charting library using Angular 7
-*Took client feedback and created/adjusted project accordingly
-*Created 80+ pages of financial reports/graphs using HTML and JavaScript Highcharts
-*Created printable reports for all pages 
-*Set up tables/charts to receive data via API 
+* Created investment management company charting library using Angular 7
+* Took client feedback and created/adjusted project accordingly
+* Created 80+ pages of financial reports/graphs using HTML and JavaScript Highcharts
+* Created printable reports for all pages 
+* Set up tables/charts to receive data via API 
 
 ## NOTES FROM CHRIS HARPER
 
